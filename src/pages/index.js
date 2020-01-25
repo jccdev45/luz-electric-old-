@@ -1,3 +1,27 @@
-import React from "react"
+import React from "react";
+import Layout from "../utils/Layout";
+import Hero from "../components/Hero";
 
-export default () => <div>Hello world!</div>
+import "../styles/styles.css";
+import { useStaticQuery, graphql } from "gatsby";
+
+export default () => {
+  const banner = useStaticQuery(graphql`
+    query {
+      file(relativeDirectory: { eq: "img" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `);
+  return (
+    <div className="app col">
+      <Layout>
+        <Hero img={banner.file.childImageSharp.fluid} />
+      </Layout>
+    </div>
+  );
+};

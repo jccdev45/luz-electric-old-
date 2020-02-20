@@ -1,48 +1,36 @@
-import React, { useState } from "react";
-import { Link } from "gatsby";
-import { MDMenu } from "react-icons/md";
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
+import { Container, Navbar, Nav } from "react-bootstrap";
 
 export const Header = () => {
-  const [isMobile, toggle] = React.useState(false);
-
-  function mobileView(mobile) {
-    if (mobile.matches) {
-      document.body.style.backgroundColor = "yellow";
-    } else {
-      document.body.style.backgroundColor = "pink";
+  const query = useStaticQuery(graphql`
+    query {
+      logo: file(relativePath: { eq: "img/logo.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
-  }
-
-  var mobile = window.matchMedia("(max-width: 700px)");
-  mobileView(mobile);
-  mobile.addListener(mobileView);
+  `);
 
   return (
-    <nav className="row">
-      <div className="nav-logo">
-        <Link to="/">
-          LUZ ELECTRIC <br /> & CONTROL SYSTEMS INC
-        </Link>
-      </div>
-      <div className="nav-items">
-        <ul className="nav-link-list row">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/services">Services</Link>
-          </li>
-          <li>
-            <Link to="/gallery">Gallery</Link>
-          </li>
-          <li>
-            <Link to="/about-us">About Us</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <Navbar expand="sm" sticky="top">
+      <Navbar.Brand href="/">
+        <Img fluid={query.logo.childImageSharp.fluid} />
+      </Navbar.Brand>
+      <Navbar.Toggle />
+      <Navbar.Collapse className="justify-content-end">
+        <Nav>
+          <Nav.Link href="/">HOME</Nav.Link>
+          <Nav.Link href="/services">SERVICES</Nav.Link>
+          <Nav.Link href="/gallery">GALLERY</Nav.Link>
+          <Nav.Link href="/about-us">ABOUT</Nav.Link>
+          <Nav.Link href="/contact">CONTACT</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 };

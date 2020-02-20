@@ -1,0 +1,66 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+.navbar {
+  padding: 0.5em 2.5em;
+  font-size: 1.5em;
+}
+
+.navbar-brand {
+  min-width: 6em;
+  height: auto;
+  font-size: 1em;
+}
+
+.navbar-nav a {
+  font-size: .75em;
+}
+
+.services-container {
+  padding: 2em 4em;
+  text-align: center;
+}
+
+.service {
+  padding: 0.5em;
+}
+
+.service img {
+  width: 75px;
+  height: 75px;
+}
+
+.mission-container {
+  background-color: gray;
+  padding: 10em 5em;
+}
+
+.testimonial-container {
+  padding: 5em;
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    padding: 0.5em;
+  }
+
+  .navbar-brand {
+    width: 7em;
+  }
+
+  .services-row {
+    padding: 0;
+  }
+
+  .service {
+    padding: 1em;
+  }
+
+  .mission-container {
+    padding: 3em 1em;
+  }
+
+  .mission-container > .row :first-child,
+  .mission-container > .row :last-child {
+    margin: 1em 0;
+  }
+}

@@ -3,10 +3,10 @@ import { useStaticQuery, graphql } from "gatsby";
 import { ThemeProvider } from "styled-components";
 import { Container } from "react-bootstrap";
 import Hero from "../components/Hero";
-import Overview from "../components/Home/Overview";
+// import Overview from "../components/Home/Overview";
 import Mission from "../components/Home/Mission";
 import Estimate from "../components/Home/Estimate";
-import Testimonial from "../components/Home/Testimonial";
+// import Testimonial from "../components/Home/Testimonial";
 import Footer from "../components/Home/Footer";
 import Layout from "../utils/Layout";
 import { theme } from "../styles/theme";
@@ -22,16 +22,16 @@ export default () => {
           }
         }
       }
-      overview: allFile(filter: { relativeDirectory: { eq: "img/overview" } }) {
-        nodes {
-          childImageSharp {
-            fixed(width: 62, height: 62) {
-              ...GatsbyImageSharpFixed
-              originalName
-            }
-          }
-        }
-      }
+      # overview: allFile(filter: { relativeDirectory: { eq: "img/overview" } }) {
+      #   nodes {
+      #     childImageSharp {
+      #       fixed(width: 62, height: 62) {
+      #         ...GatsbyImageSharpFixed
+      #         originalName
+      #       }
+      #     }
+      #   }
+      # }
       carousel: allFile(filter: { relativeDirectory: { eq: "img/carousel" } }) {
         nodes {
           childImageSharp {
@@ -46,13 +46,13 @@ export default () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container className="app p-0" fluid>
+      <Container className="p-0" fluid>
         <Layout>
           <Hero img={query.banner.childImageSharp.fluid} />
-          <Overview img={query.overview.nodes} />
           <Mission />
+          {/* <Overview img={query.overview.nodes} /> */}
           <Estimate img={query.carousel.nodes} />
-          <Testimonial />
+          {/* <Testimonial /> */}
           <Footer />
         </Layout>
       </Container>

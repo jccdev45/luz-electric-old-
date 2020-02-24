@@ -9,7 +9,7 @@ const HeroContainer = styled.div`
 
 function Hero(props) {
   return (
-    <HeroContainer>
+    <HeroContainer className="hero-container">
       <Img fluid={props.img} />
     </HeroContainer>
   );

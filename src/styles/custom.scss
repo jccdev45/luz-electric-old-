@@ -13,6 +13,16 @@
 
 .navbar-nav a {
   font-size: .75em;
+  color: #0e1d68;
+  margin: 0 .5em;
+}
+
+.hero-container {
+  // min-height: 200px;
+}
+
+.jumbotron {
+  margin: 0;
 }
 
 .services-container {
@@ -30,12 +40,34 @@
 }
 
 .mission-container {
-  background-color: gray;
+  background-color: rgb(173, 173, 173);
   padding: 10em 5em;
 }
 
 .testimonial-container {
   padding: 5em;
+}
+
+.services-intro, .services-overview {
+  padding: 2em 3em;
+  text-align: center;
+}
+
+.services-intro {
+  background-color: lightgray;
+}
+
+.services-intro > * {
+  margin: 1em;
+}
+
+.services-footer h3 {
+  color: brown;
+}
+
+.card-img {
+  width: 100px;
+  height: auto;
 }
 
 @media (max-width: 500px) {
@@ -62,5 +94,9 @@
   .mission-container > .row :first-child,
   .mission-container > .row :last-child {
     margin: 1em 0;
+  }
+
+  .services-intro {
+    padding: 3em 1em;
   }
 }

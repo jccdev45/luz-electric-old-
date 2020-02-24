@@ -17,6 +17,7 @@ const GlobalStyles = createGlobalStyle`
     width: 100vw;
     text-rendering: optimizeLegibility;
     text-align: center;
+    font-family: 'Roboto';
   }
   nav {
     background: ${({ theme }) => theme.primaryLight};
@@ -64,6 +65,11 @@ const GlobalStyles = createGlobalStyle`
     background-color: ${({ theme }) => theme.primaryDark};
     color: white;
     padding: 3em;
+  }
+
+  .services-footer {
+    background-color: ${({ theme }) => theme.primaryDark};
+    color: white;
   }
 `;
 

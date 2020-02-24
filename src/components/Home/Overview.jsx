@@ -1,5 +1,5 @@
 import React from "react";
-import Img from "gatsby-image";
+// import Img from "gatsby-image";
 import { Container, Row, Col, ListGroup, Image } from "react-bootstrap";
 import Commercial from "../../assets/img/overview/commercial.png";
 import Construction from "../../assets/img/overview/construction.png";
@@ -8,7 +8,7 @@ import Prevention from "../../assets/img/overview/prevention.png";
 import Residential from "../../assets/img/overview/residential.png";
 import Service from "../../assets/img/overview/service.png";
 
-export default function Overview(props) {
+export default function Overview() {
   const services = [
     {
       name: "New Construction",
@@ -23,12 +23,14 @@ export default function Overview(props) {
       ]
     },
     {
-      name: "Service & Maintenance",
-      icon: "service.png",
-      image: Service,
+      name: "Residential",
+      icon: "residential.png",
+      image: Residential,
       desc: [
-        "Preventive maintenance",
-        "Installation of electrical power for appliances"
+        "Violations removal",
+        "Accented lighting",
+        "Renovations",
+        "Security & entertainment systems"
       ]
     },
     {
@@ -45,14 +47,12 @@ export default function Overview(props) {
       ]
     },
     {
-      name: "Residential",
-      icon: "residential.png",
-      image: Residential,
+      name: "Service & Maintenance",
+      icon: "service.png",
+      image: Service,
       desc: [
-        "Violations removal",
-        "Accented lighting",
-        "Renovations",
-        "Security & entertainment systems"
+        "Preventive maintenance",
+        "Installation of electrical power for appliances"
       ]
     },
     {
@@ -74,11 +74,18 @@ export default function Overview(props) {
   return (
     <Container className="services-container" fluid>
       <Row className="services-row">
+        <Col xs={12}>
+          <h1>What We Do:</h1>
+          <h1>40+</h1>
+          <h3>Years Providing Electrical Services to NYC.</h3>
+          <p>
+            Feel confident knowing that our electricians, estimators, and
+            project managers know the tricks of the trade that can only come
+            with industry experience.
+          </p>
+        </Col>
         {services.map((service, index) => (
-          <Col className="service col aic" key={index} xs md={4}>
-            {/* {service.icon === imgName ? (
-              <Img fixed={props.img.childImageSharp.fixed} />
-            ) : ""} */}
+          <Col className="service col aic" key={index} xs={12} md={4}>
             <Image src={service.image} fluid />
             <h4>{service.name}</h4>
             <ListGroup variant="flush">

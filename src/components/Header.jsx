@@ -1,7 +1,8 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
-import { Container, Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 export const Header = () => {
   const query = useStaticQuery(graphql`
@@ -18,17 +19,27 @@ export const Header = () => {
 
   return (
     <Navbar expand="sm" sticky="top">
-      <Navbar.Brand href="/">
+      <Navbar.Brand as={AniLink} cover duration={0.5} bg="#070f38" to="/">
         <Img fluid={query.logo.childImageSharp.fluid} />
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse className="justify-content-end">
         <Nav>
-          <Nav.Link href="/">HOME</Nav.Link>
-          <Nav.Link href="/services">SERVICES</Nav.Link>
-          <Nav.Link href="/gallery">GALLERY</Nav.Link>
-          <Nav.Link href="/about-us">ABOUT</Nav.Link>
-          <Nav.Link href="/contact">CONTACT</Nav.Link>
+          <AniLink cover duration={0.5} bg="#070f38" to="/">
+            HOME
+          </AniLink>
+          <AniLink cover duration={0.5} bg="#070f38" to="/services">
+            SERVICES
+          </AniLink>
+          <AniLink cover duration={0.5} bg="#070f38" to="/gallery">
+            GALLERY
+          </AniLink>
+          <AniLink cover duration={0.5} bg="#070f38" to="/about-us">
+            ABOUT
+          </AniLink>
+          <AniLink cover duration={0.5} bg="#070f38" to="/contact">
+            CONTACT
+          </AniLink>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

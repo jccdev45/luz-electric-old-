@@ -32,7 +32,7 @@ export default function ContactForm() {
         <Form.Row>
           <Form.Group controlId="formName" as={Col} xs="12" md="6">
             <Form.Label>Name</Form.Label>
-            <Form.Control required placeholder="John Smith" />
+            <Form.Control type="text" required placeholder="John Smith" />
             <Form.Control.Feedback type="invalid">
               Please fill out this field.
             </Form.Control.Feedback>
@@ -60,6 +60,7 @@ export default function ContactForm() {
           <Form.Group controlId="formSubject" as={Col} xs="12" md="6">
             <Form.Label>Subject</Form.Label>
             <Form.Control
+              type="text"
               required
               placeholder="Estimate, service appointment, emergency, etc.."
             />

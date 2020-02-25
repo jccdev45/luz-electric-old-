@@ -24,7 +24,7 @@ export default () => {
       <Container className="p-0" fluid>
         <Layout>
           <Hero img={query.banner.childImageSharp.fluid} />
-          <Container>
+          <Container className="p-3">
             <h1>OUR TEAM</h1>
             <p>
               Established in 2002, Luz Electric & Control Systems Inc. takes

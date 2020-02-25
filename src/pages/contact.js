@@ -24,8 +24,7 @@ export default () => {
     <ThemeProvider theme={theme}>
       <Container className="p-0" fluid>
         <Layout>
-          <Container class
-          >
+          <Container className="py-3">
             <Row>
               <Col md={12}>
                 <Hours />

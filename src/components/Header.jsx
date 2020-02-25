@@ -18,7 +18,7 @@ export const Header = () => {
   `);
 
   return (
-    <Navbar expand="sm" sticky="top">
+    <Navbar expand="sm" fixed="top">
       <Navbar.Brand as={AniLink} cover duration={0.5} bg="#070f38" to="/">
         <Img fluid={query.logo.childImageSharp.fluid} />
       </Navbar.Brand>

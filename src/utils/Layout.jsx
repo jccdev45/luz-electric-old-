@@ -77,10 +77,8 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyles />
-      <main>
-        <Header />
-        {children}
-      </main>
+      <Header />
+      <main>{children}</main>
     </>
   );
 };

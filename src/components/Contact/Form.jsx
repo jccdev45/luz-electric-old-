@@ -80,10 +80,10 @@ export default function ContactForm() {
             Please fill out this field.
           </Form.Control.Feedback>
         </Form.Group>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
       </Form>
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
     </Container>
   );
 }

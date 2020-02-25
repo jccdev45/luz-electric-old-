@@ -17,7 +17,18 @@ export default function ContactForm() {
   return (
     <Container>
       <h2>Contact Us:</h2>
-      <Form noValidate validated={validated} onSubmit={handleSubmit}>
+      <Form
+        className="px-5"
+        noValidate
+        validated={validated}
+        onSubmit={handleSubmit}
+        method="post"
+        data-netlify-honeypot="bot-field"
+        data-netlify="true"
+        name="Contact"
+      >
+        <input type="hidden" name="bot-field" />
+        <input type="hidden" name="form-name" value="Contact" />
         <Form.Row>
           <Form.Group controlId="formName" as={Col} xs="12" md="6">
             <Form.Label>Name</Form.Label>

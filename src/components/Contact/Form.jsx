@@ -1,90 +1,128 @@
-import React from "react";
-import { Container, Form, Button, Col } from "react-bootstrap";
+import { navigate } from "gatsby";
+import React, { useState, useRef } from "react";
+import { Container, Row, Button, Col } from "react-bootstrap";
 
 export default function ContactForm() {
-  const [validated, setValidated] = React.useState(false);
+  const [contactState, setContactState] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+  const contactRef = useRef(null);
 
-  const handleSubmit = event => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "+" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
 
-    setValidated(true);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setContactState({ ...contactState, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formRef = contactRef.current;
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": formRef.getAttribute("name"),
+        ...contactState,
+      }),
+    })
+      .then(() => navigate("/"))
+      .catch((error) => alert(error));
+
+    setContactState({
+      name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
+    });
   };
 
   return (
     <Container>
       <h2>Contact Us:</h2>
-      <Form
-        className="px-5"
-        noValidate
-        validated={validated}
-        onSubmit={handleSubmit}
-        method="post"
-        data-netlify-honeypot="bot-field"
-        data-netlify="true"
+      <form
         name="Contact"
+        className="px-5"
+        method="post"
+        action="/"
+        ref={contactRef}
+        onSubmit={handleSubmit}
+        netlify-honeypot="bot-field"
+        data-netlify="true"
       >
-        <input type="hidden" name="bot-field" />
+        <input type="hidden" name="bot-field" onChange={handleChange} />
         <input type="hidden" name="form-name" value="Contact" />
-        <Form.Row>
-          <Form.Group controlId="formName" as={Col} xs="12" md="6">
-            <Form.Label>Name</Form.Label>
-            <Form.Control type="text" required placeholder="John Smith" />
-            <Form.Control.Feedback type="invalid">
-              Please fill out this field.
-            </Form.Control.Feedback>
-          </Form.Group>
-          <Form.Group controlId="formEmail" as={Col} xs="12" md="6">
-            <Form.Label>Email</Form.Label>
-            <Form.Control
-              required
+        <Row>
+          <Col xs="12" md="6">
+            <label htmlFor="name">Name</label>
+            <input
+              name="name"
+              onChange={handleChange}
+              value={contactState.name}
+              type="text"
+              placeholder="John Smith"
+            />
+          </Col>
+          <Col xs="12" md="6">
+            <label htmlFor="email">Email</label>
+            <input
+              name="email"
+              onChange={handleChange}
+              value={contactState.email}
               type="email"
               placeholder="name@example.com"
             />
-            <Form.Control.Feedback type="invalid">
-              Please fill out this field.
-            </Form.Control.Feedback>
-          </Form.Group>
-        </Form.Row>
-        <Form.Row>
-          <Form.Group controlId="formPhone" as={Col} xs="12" md="6">
-            <Form.Label>Phone</Form.Label>
-            <Form.Control required type="number" placeholder="(123) 456-7890" />
-            <Form.Control.Feedback type="invalid">
-              Please fill out this field.
-            </Form.Control.Feedback>
-          </Form.Group>
-          <Form.Group controlId="formSubject" as={Col} xs="12" md="6">
-            <Form.Label>Subject</Form.Label>
-            <Form.Control
+          </Col>
+        </Row>
+        <Row>
+          <Col xs="12" md="6">
+            <label htmlFor="phone">Phone</label>
+            <input
+              name="phone"
+              onChange={handleChange}
+              value={contactState.phone}
               type="text"
-              required
+              placeholder="(123) 456-7890"
+            />
+          </Col>
+          <Col xs="12" md="6">
+            <label htmlFor="subject">Subject</label>
+            <input
+              name="subject"
+              onChange={handleChange}
+              value={contactState.subject}
+              type="text"
               placeholder="Estimate, service appointment, emergency, etc.."
             />
-            <Form.Control.Feedback type="invalid">
-              Please fill out this field.
-            </Form.Control.Feedback>
-          </Form.Group>
-        </Form.Row>
-        <Form.Group controlId="formMessage">
-          <Form.Label>Message</Form.Label>
-          <Form.Control
-            required
-            as="textarea"
+          </Col>
+        </Row>
+        <Col>
+          <label htmlFor="message">Message</label>
+          <textarea
+            name="message"
+            onChange={handleChange}
+            value={contactState.message}
             rows="3"
             placeholder="Please include as much detail as possible."
           />
-          <Form.Control.Feedback type="invalid">
-            Please fill out this field.
-          </Form.Control.Feedback>
-        </Form.Group>
+        </Col>
         <Button variant="primary" type="submit">
           Submit
         </Button>
-      </Form>
+      </form>
     </Container>
   );
 }

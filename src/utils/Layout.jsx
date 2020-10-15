@@ -1,6 +1,9 @@
 import React from "react";
-import { Header } from "../components/Header";
-import { createGlobalStyle } from "styled-components";
+import { Header } from "../components/shared/Header";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
+import { theme } from "../styles/theme";
+import Footer from "../components/shared/Footer";
+import { Container } from "react-bootstrap";
 
 const GlobalStyles = createGlobalStyle`
   /* BASE */
@@ -31,6 +34,10 @@ const GlobalStyles = createGlobalStyle`
   a {
     text-decoration: none;
   }
+  footer {
+    background-color: ${({ theme }) => theme.primaryDark};
+    color: white;
+  }
 
   /* LAYOUT */
   .row {
@@ -54,6 +61,7 @@ const GlobalStyles = createGlobalStyle`
   }
   .aic {
     align-items: center;
+    padding: 1rem;
   }
 
   /* ELEMENTS */
@@ -61,6 +69,7 @@ const GlobalStyles = createGlobalStyle`
     background-color: ${({ theme }) => theme.primaryDark};
     color: white;
   }
+
   .footskis {
     background-color: ${({ theme }) => theme.primaryDark};
     color: white;
@@ -71,15 +80,22 @@ const GlobalStyles = createGlobalStyle`
     background-color: ${({ theme }) => theme.primaryDark};
     color: white;
   }
+
+  .about {
+    padding: 8rem 4rem;
+  }
 `;
 
 const Layout = ({ children }) => {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Header />
-      <main>{children}</main>
-    </>
+      <Container className="p-0" fluid>
+        <main>{children}</main>
+      </Container>
+      <Footer />
+    </ThemeProvider>
   );
 };
 

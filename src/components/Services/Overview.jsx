@@ -1,68 +1,97 @@
 import React from "react";
-import { Container, Row, Col, ListGroup } from "react-bootstrap";
+// import Img from "gatsby-image";
+import { Container, Row, Col, ListGroup, Image } from "react-bootstrap";
+import Commercial from "../../assets/img/overview/commercial.png";
+import Construction from "../../assets/img/overview/construction.png";
+import Inspect from "../../assets/img/overview/inspect.png";
+import Prevention from "../../assets/img/overview/prevention.png";
+import Residential from "../../assets/img/overview/residential.png";
+import Service from "../../assets/img/overview/service.png";
 
-export default function Intro() {
+export default function Overview() {
+  const SERVICES = [
+    {
+      name: "New Construction",
+      image: Construction,
+      desc: [
+        "Power wiring",
+        "Lighting fixtures",
+        "Panels/Switches/Disconnects",
+        "Raceways & wiring for power, light, heat & control systems & all related equipment",
+        "Motor controls, starters, pump, control wiring & all related equipment",
+      ],
+    },
+    {
+      name: "Residential",
+      image: Residential,
+      desc: [
+        "Violations removal",
+        "Accented lighting",
+        "Renovations",
+        "Security & entertainment systems",
+      ],
+    },
+    {
+      name: "Commercial & Industrial",
+      image: Commercial,
+      desc: [
+        "Lighting retrofits",
+        "ECB violation removal & C of O",
+        "Controls & service upgrade",
+        "Parking & outdoor lighting",
+        "Automated building maintenance control wiring & HVAC systems on commercial & industrial buildings",
+        "Schools, government facilities & private owners",
+      ],
+    },
+    {
+      name: "Service & Maintenance",
+      image: Service,
+      desc: [
+        "Preventive maintenance",
+        "Installation of electrical power for appliances",
+      ],
+    },
+    {
+      name: "Property Inspection",
+      image: Inspect,
+      desc: [
+        "Identify violations, repair & upgrades required in properties for sale or rent",
+      ],
+    },
+    {
+      name: "Prevention & Property Protection",
+      image: Prevention,
+      desc: ["Installation of fire alarm systems, wiring & related equipment"],
+    },
+  ];
+
+  const renderServices = () => {
+    return SERVICES.map((service, index) => (
+      <Col className="service col aic" key={index} xs={12} md={4}>
+        <Image src={service.image} fluid />
+        <h4 className="my-2">{service.name}</h4>
+        <ListGroup variant="flush">
+          {service.desc.map((item, index) => (
+            <ListGroup.Item key={index}>{item}</ListGroup.Item>
+          ))}
+        </ListGroup>
+      </Col>
+    ));
+  };
+
   return (
-    <Container className="services-overview" fluid>
-      <Row>
-        <Col md={{ span: 3 }} lg={5}>
-          <h1>What We Do:</h1>
-          <h1>40+</h1>
-          <h3>Years Providing Electrical Services to NYC.</h3>
+    <Container className="services-container" fluid>
+      <Row className="services-row">
+        <Col xs={12}>
+          <h3>40+ Years Providing Electrical Services to NYC</h3>
+          <h2 className="my-4">What We Do:</h2>
           <p>
-            Feel confident knowing that our electricians, estimators, and
-            project managers know the tricks of the trade that can only come
+            You can feel confident knowing that our electricians, estimators,
+            and project managers know the tricks of the trade that can only come
             with industry experience.
           </p>
         </Col>
-
-        <Col xs={12} md={9} lg={5}>
-          <ListGroup horizontal>
-            <Col md={4} lg>
-              <ListGroup.Item>Stop/Start Controls Wiring </ListGroup.Item>
-              <ListGroup.Item>Breakers & Fuses</ListGroup.Item>
-              <ListGroup.Item>Circuits </ListGroup.Item>
-              <ListGroup.Item>Fans </ListGroup.Item>
-              <ListGroup.Item>Lighting </ListGroup.Item>
-            </Col>
-            <Col md={4} lg>
-              <ListGroup.Item>Inspections</ListGroup.Item>
-              <ListGroup.Item>Outlets & Switches</ListGroup.Item>
-              <ListGroup.Item>Panels</ListGroup.Item>
-              <ListGroup.Item>Surge/Lightning/Fire Protection</ListGroup.Item>
-              <ListGroup.Item>Wiring and all related Equipment</ListGroup.Item>
-            </Col>
-            <Col md={4} lg>
-              <ListGroup.Item>Power Wiring</ListGroup.Item>
-              <ListGroup.Item>
-                Automated Building Maintenance Control Wiring for HVAC Systems
-                On Residential, Commercial & Industrial Buildings, Schools &
-                Government Facilities
-              </ListGroup.Item>
-            </Col>
-          </ListGroup>
-        </Col>
-        <Col xs={12} md={9} lg={5}>
-          <ListGroup horizontal>
-            <Col md={4} md={4} lg>
-              <ListGroup.Item>Lighting Fixtures </ListGroup.Item>
-              <ListGroup.Item>Switchess</ListGroup.Item>
-              <ListGroup.Item>Disconnects </ListGroup.Item>
-              <ListGroup.Item>Piping for Power </ListGroup.Item>
-              <ListGroup.Item>Light & Heating Systems </ListGroup.Item>
-            </Col>
-            <Col md={4} lg>
-              <ListGroup.Item>Motor Controls</ListGroup.Item>
-              <ListGroup.Item>Violations Removal</ListGroup.Item>
-              <ListGroup.Item>Lighting Retrofits</ListGroup.Item>
-              <ListGroup.Item>Parking and Outdoor Lighting</ListGroup.Item>
-              <ListGroup.Item>Preventive Maintenance</ListGroup.Item>
-            </Col>
-            <Col md={4} lg>
-              <ListGroup.Item>LED Lighting</ListGroup.Item>
-            </Col>
-          </ListGroup>
-        </Col>
+        {renderServices()}
       </Row>
     </Container>
   );

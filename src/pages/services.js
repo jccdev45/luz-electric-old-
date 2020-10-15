@@ -1,12 +1,9 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { ThemeProvider } from "styled-components";
-import { Container } from "react-bootstrap";
-import Hero from "../components/Hero";
-import { theme } from "../styles/theme";
+import Hero from "../components/shared/Hero";
 import Layout from "../utils/Layout";
 import Intro from "../components/Services/Intro";
-import Overview from "../components/Home/Overview";
+import Overview from "../components/Services/Overview";
 import Safety from "../components/Services/Safety";
 
 export default () => {
@@ -33,15 +30,11 @@ export default () => {
   `);
 
   return (
-    <ThemeProvider theme={theme}>
-      <Container className="p-0" fluid>
-        <Layout>
-          <Hero img={query.banner.childImageSharp.fluid} />
-          <Intro />
-          <Overview img={query.overview.nodes} />
-          <Safety />
-        </Layout>
-      </Container>
-    </ThemeProvider>
+    <Layout>
+      <Hero img={query.banner.childImageSharp.fluid} />
+      <Intro />
+      <Overview img={query.overview.nodes} />
+      <Safety />
+    </Layout>
   );
 };

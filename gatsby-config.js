@@ -5,6 +5,11 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: `Luz Electric and Control Systems Inc.`,
+    description: `Company website for Luz Electric and Control Systems Inc, located in Bronx, NY.`,
+    author: `@jccdev45`,
+  },
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

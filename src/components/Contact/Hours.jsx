@@ -15,7 +15,7 @@ export default function Hours() {
           </h4>
         </Col>
         <Col xs={12}>
-          <Table striped responsive>
+          <Table striped bordered responsive>
             <thead>
               <tr>
                 <th>Mon</th>
@@ -23,8 +23,6 @@ export default function Hours() {
                 <th>Wed</th>
                 <th>Thu</th>
                 <th>Fri</th>
-                <th>Sat</th>
-                <th>Sun</th>
               </tr>
             </thead>
             <tbody>
@@ -34,8 +32,6 @@ export default function Hours() {
                 <td>9AM - 5PM</td>
                 <td>9AM - 5PM</td>
                 <td>9AM - 5PM</td>
-                <td>Closed</td>
-                <td>Closed</td>
               </tr>
             </tbody>
           </Table>

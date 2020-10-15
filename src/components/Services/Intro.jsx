@@ -1,20 +1,17 @@
+import { Link } from "gatsby";
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+// import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 export default function Intro() {
   return (
     <Container className="services-intro" fluid>
       <Row>
-        <Col xs={12} md={4}>
-          <h3>COMMERCIAL</h3>
-        </Col>
-        <Col xs={12} md={4}>
-          <h3>RESIDENTIAL</h3>
-        </Col>
-        <Col xs={12} md={4}>
-          <h3>INDUSTRIAL</h3>
-        </Col>
+        {["COMMERCIAL", "RESIDENTIAL", "INDUSTRIAL"].map((item, index) => (
+          <Col key={index} xs={12} md={4}>
+            <h3>{item}</h3>
+          </Col>
+        ))}
       </Row>
       <Row>
         <Col>
@@ -29,14 +26,7 @@ export default function Intro() {
           we'll show you how we can put our knowledge to work for you.
         </p>
       </Row>
-      <Button
-        variant="primary"
-        as={AniLink}
-        to="/contact"
-        cover
-        duration={0.5}
-        bg="#070f38"
-      >
+      <Button variant="primary" as={Link} to="/contact">
         REQUEST A SERVICE
       </Button>
     </Container>

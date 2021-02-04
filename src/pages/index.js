@@ -8,33 +8,43 @@ import Layout from "../utils/Layout";
 import "../styles/custom.scss";
 
 export default () => {
-  const query = useStaticQuery(graphql`
-    query {
-      banner: file(relativePath: { eq: "img/banner.jpg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      carousel: allFile(filter: { relativeDirectory: { eq: "img/carousel" } }) {
-        nodes {
-          childImageSharp {
-            fluid(fit: CONTAIN, maxWidth: 250, maxHeight: 250, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    }
-  `);
+	const query = useStaticQuery(graphql`
+		query {
+			banner: file(relativePath: { eq: "img/banner.jpg" }) {
+				childImageSharp {
+					fluid {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			mbe: file(relativePath: { eq: "img/MBE.png" }) {
+				childImageSharp {
+					fluid {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			carousel: allFile(filter: { relativeDirectory: { eq: "img/carousel" } }) {
+				nodes {
+					childImageSharp {
+						fluid(fit: CONTAIN, maxWidth: 250, maxHeight: 250, quality: 100) {
+							...GatsbyImageSharpFluid
+						}
+					}
+				}
+			}
+		}
+	`);
 
-  return (
-    <Layout>
-      <Hero img={query.banner.childImageSharp.fluid} />
-      <Mission />
-      <Estimate img={query.carousel.nodes} />
-      <Info />
-    </Layout>
-  );
+	return (
+		<Layout>
+			<Hero
+				img={query.banner.childImageSharp.fluid}
+				img2={query.mbe.childImageSharp.fluid}
+			/>
+			<Mission />
+			<Estimate img={query.carousel.nodes} />
+			<Info />
+		</Layout>
+	);
 };

@@ -5,7 +5,7 @@ export default function Hours() {
 	return (
 		<Container fluid>
 			<Row>
-				<Col xs={12} md={6}>
+				<Col>
 					<h2>We are located at:</h2>
 					<h4>
 						2082 Crotona Avenue <br />
@@ -14,7 +14,7 @@ export default function Hours() {
 						Fax: 718-220-4441
 					</h4>
 				</Col>
-				<Col xs={12} md={6}>
+				<Col>
 					<h2>Hours:</h2>
 					<h4>Mon - Fri</h4>
 					<h4>8 - 4 PM</h4>

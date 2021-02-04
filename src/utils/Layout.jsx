@@ -16,7 +16,7 @@ const GlobalStyles = createGlobalStyle`
   }
   body {
     background: white;
-    height: 100vh;
+    ${"" /* height: 100vh; */}
     width: 100vw;
     text-rendering: optimizeLegibility;
     text-align: center;
@@ -55,6 +55,9 @@ const GlobalStyles = createGlobalStyle`
   }
   .jcc {
     justify-content: center;
+  }
+  .jcsa {
+    justify-content: space-evenly;
   }
   .jcsb {
     justify-content: space-between;

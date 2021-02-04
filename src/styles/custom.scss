@@ -19,11 +19,19 @@
 
 main {
   margin-top: 64px;
-  min-height: 100vh;
+  min-height: 81vh;
 }
 
 .jumbotron {
   margin: 0;
+}
+
+.mbe-container {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  width: 13rem;
+  height: 13rem;
 }
 
 .services-container {
@@ -78,6 +86,11 @@ main {
 
   .navbar-brand {
     width: 7em;
+  }
+
+  .mbe-container {
+    width: 4rem;
+    height: 4rem;
   }
 
   .services-row {

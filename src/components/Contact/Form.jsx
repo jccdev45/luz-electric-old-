@@ -66,7 +66,7 @@ export default function ContactForm() {
 				<input type="hidden" name="bot-field" onChange={handleChange} />
 				<input type="hidden" name="form-name" value="Contact" />
 				<Row>
-					<Col xs="12" md="6">
+					<Col xs={12} md={6}>
 						<label htmlFor="name">Name</label>
 						<input
 							name="name"
@@ -76,7 +76,7 @@ export default function ContactForm() {
 							placeholder="John Smith"
 						/>
 					</Col>
-					<Col xs="12" md="6">
+					<Col xs={12} md={6}>
 						<label htmlFor="email">Email</label>
 						<input
 							name="email"
@@ -88,7 +88,7 @@ export default function ContactForm() {
 					</Col>
 				</Row>
 				<Row>
-					<Col xs="12" md="6">
+					<Col xs={12} md={6}>
 						<label htmlFor="phone">Phone</label>
 						<input
 							name="phone"
@@ -98,7 +98,7 @@ export default function ContactForm() {
 							placeholder="(123) 456-7890"
 						/>
 					</Col>
-					<Col xs="12" md="6">
+					<Col xs={12} md={6}>
 						<label htmlFor="subject">Subject</label>
 						<input
 							name="subject"

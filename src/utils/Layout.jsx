@@ -87,16 +87,16 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const Layout = ({ children }) => {
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <Header />
-      <Container className="p-0" fluid>
-        <main>{children}</main>
-      </Container>
-      <Footer />
-    </ThemeProvider>
-  );
+	return (
+		<ThemeProvider theme={theme}>
+			<GlobalStyles />
+			<Header />
+			<Container className="p-0" fluid>
+				<main>{children}</main>
+			</Container>
+			<Footer />
+		</ThemeProvider>
+	);
 };
 
 export default Layout;

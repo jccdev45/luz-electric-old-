@@ -5,7 +5,6 @@ import Mission from "../components/Home/Mission";
 import Estimate from "../components/Home/Estimate";
 import Info from "../components/Home/Info";
 import Layout from "../utils/Layout";
-import "../styles/custom.scss";
 
 export default () => {
 	const query = useStaticQuery(graphql`
@@ -38,13 +37,13 @@ export default () => {
 
 	return (
 		<Layout>
-			<Hero
+			{/* <Hero
 				img={query.banner.childImageSharp.fluid}
 				img2={query.mbe.childImageSharp.fluid}
 			/>
 			<Mission />
 			<Estimate img={query.carousel.nodes} />
-			<Info />
+			<Info /> */}
 		</Layout>
 	);
 };

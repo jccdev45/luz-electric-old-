@@ -1,46 +1,37 @@
 import React from "react";
-import { useStaticQuery, graphql, Link } from "gatsby";
-import Img from "gatsby-image";
-import { Navbar, Nav } from "react-bootstrap";
-// import AniLink from "gatsby-plugin-transition-link/AniLink";
+import { Link } from "gatsby";
+import logo from "../../assets/img/logo.png";
 
 const ROUTES = [
-  { id: 1, name: "HOME", path: "/" },
-  { id: 2, name: "SERVICES", path: "/services" },
-  // { id: 3, name: "GALLERY", path: "/gallery" },
-  { id: 4, name: "CONTACT", path: "/contact" },
+	{ id: 1, name: "HOME", path: "/" },
+	{ id: 2, name: "SERVICES", path: "/services" },
+	// { id: 3, name: "GALLERY", path: "/gallery" },
+	{ id: 4, name: "CONTACT", path: "/contact" },
 ];
 
 export const Header = () => {
-  const query = useStaticQuery(graphql`
-    query {
-      logo: file(relativePath: { eq: "img/logo.png" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `);
+	const renderRoutes = () => {
+		return ROUTES.map((route) => (
+			<Link
+				key={route.id}
+				to={route.path}
+				className="block no-underline md:inline-block md:ml-6"
+			>
+				{route.name}
+			</Link>
+		));
+	};
 
-  const renderRoutes = () => {
-    return ROUTES.map((route) => (
-      <Link key={route.id} to={route.path}>
-        {route.name}
-      </Link>
-    ));
-  };
-
-  return (
-    <Navbar expand="sm" fixed="top">
-      <Navbar.Brand as={Link} to="/">
-        <Img fluid={query.logo.childImageSharp.fluid} />
-      </Navbar.Brand>
-      <Navbar.Toggle />
-      <Navbar.Collapse className="justify-content-end">
-        <Nav>{renderRoutes()}</Nav>
-      </Navbar.Collapse>
-    </Navbar>
-  );
+	return (
+		<header className="fixed top-0 z-50 w-full text-white bg-indigo-900">
+			<div className="flex flex-wrap items-center justify-between p-3 mx-auto">
+				<Link to="/">
+					<img src={logo} className="object-contain" />
+				</Link>
+				<nav className="w-full md:flex md:items-center md:w-auto">
+					{renderRoutes()}
+				</nav>
+			</div>
+		</header>
+	);
 };

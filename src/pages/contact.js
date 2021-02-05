@@ -1,5 +1,4 @@
 import React from "react";
-import { Container, Col } from "react-bootstrap";
 import Layout from "../utils/Layout";
 import Hours from "../components/Contact/Hours";
 import ContactForm from "../components/Contact/Form";
@@ -7,14 +6,14 @@ import ContactForm from "../components/Contact/Form";
 export default () => {
 	return (
 		<Layout>
-			<Container className="p-5 row aic" fluid style={{ minHeight: `100%` }}>
-				<Col md={12}>
+			<div className="p-5 row aic">
+				<div>
 					<Hours />
-				</Col>
-				<Col md={12}>
+				</div>
+				<div>
 					<ContactForm />
-				</Col>
-			</Container>
+				</div>
+			</div>
 		</Layout>
 	);
 };

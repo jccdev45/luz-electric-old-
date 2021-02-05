@@ -4,12 +4,12 @@ module.exports = {
 		description: `Company website for Luz Electric and Control Systems Inc, located in Bronx, NY.`,
 		author: `@jccdev45`,
 	},
+	flags: { PRESERVE_WEBPACK_CACHE: true },
 	plugins: [
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-postcss`,
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-sharp`,
-		`gatsby-plugin-sass`,
 		{
 			resolve: `gatsby-plugin-google-fonts`,
 			options: {

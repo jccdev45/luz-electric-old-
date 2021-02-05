@@ -1,6 +1,5 @@
 import React from "react";
-// import Img from "gatsby-image";
-import { Container, Row, Col, ListGroup, Image } from "react-bootstrap";
+import Img from "gatsby-image";
 import Commercial from "../../assets/img/overview/commercial.png";
 import Construction from "../../assets/img/overview/construction.png";
 import Inspect from "../../assets/img/overview/inspect.png";
@@ -66,22 +65,25 @@ export default function Overview() {
 
 	const renderServices = () => {
 		return SERVICES.map((service, index) => (
-			<Col className="service col aic" key={index} xs={12} md={4}>
-				<Image src={service.image} fluid />
+			// service
+			<div className="w-full h-full" key={index}>
+				<Img fluid={service.image} />
 				<h4 className="my-2">{service.name}</h4>
-				<ListGroup variant="flush">
+				<ul>
 					{service.desc.map((item, index) => (
-						<ListGroup.Item key={index}>{item}</ListGroup.Item>
+						<li key={index}>{item}</li>
 					))}
-				</ListGroup>
-			</Col>
+				</ul>
+			</div>
 		));
 	};
 
 	return (
-		<Container className="services-container" fluid>
-			<Row className="services-row">
-				<Col xs={12}>
+		// services-container
+		<div className="">
+			{/* services-row */}
+			<div className="">
+				<div>
 					<h3>40+ Years Providing Electrical Services to NYC</h3>
 					<h2 className="my-4">What We Do:</h2>
 					<p>
@@ -89,9 +91,9 @@ export default function Overview() {
 						and project managers know the tricks of the trade that can only come
 						with industry experience.
 					</p>
-				</Col>
+				</div>
 				{renderServices()}
-			</Row>
-		</Container>
+			</div>
+		</div>
 	);
 }

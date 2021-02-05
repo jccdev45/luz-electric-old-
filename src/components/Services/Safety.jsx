@@ -1,5 +1,4 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
 
 const INFO = [
 	{
@@ -21,22 +20,23 @@ const INFO = [
 
 const renderInfo = () => {
 	return INFO.map((item, index) => (
-		<Col className="p-4" xs={12} md={4} key={index}>
+		<div className="p-4" key={index}>
 			<h3>{item.title}</h3>
 			<p>{item.desc}</p>
-		</Col>
+		</div>
 	));
 };
 
 export default function Safety() {
 	return (
-		<Container className="services-footer p-4" fluid>
-			<Row>
-				<Col xs={12}>
+		// services-footer
+		<div className="p-4">
+			<div>
+				<div>
 					<h2>SAFETY AND QUALITY CONSCIOUS ELECTRICAL CONTRACTORS</h2>
-				</Col>
+				</div>
 				{renderInfo()}
-			</Row>
-		</Container>
+			</div>
+		</div>
 	);
 }

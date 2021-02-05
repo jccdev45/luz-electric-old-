@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Card, CardDeck } from "react-bootstrap";
+// import Img from "gatsby-image";
 import Area from "../../assets/img/luz-area2.png";
 import Security from "../../assets/img/luz-security2.png";
 import Team from "../../assets/img/luz-team2.png";
@@ -27,22 +27,19 @@ const INFO = [
 
 const renderInfo = () => {
 	return INFO.map((item, index) => (
-		<Card className="bg-dark text-white aic" key={index}>
-			<Card.Img src={item.image} />
-			<Card.Body>
-				<Card.Title>{item.title}</Card.Title>
-				<Card.Text>{item.desc}</Card.Text>
-			</Card.Body>
-		</Card>
+		<div className="bg-dark text-white" key={index}>
+			<img src={item.image} />
+			<div>
+				<h3>{item.title}</h3>
+				<p>{item.desc}</p>
+			</div>
+		</div>
 	));
 };
 
 export default function Info() {
 	return (
-		<Container className="footskis" fluid>
-			<Row>
-				<CardDeck>{renderInfo()}</CardDeck>
-			</Row>
-		</Container>
+		// footskis
+		<div className="">{renderInfo()}</div>
 	);
 }

@@ -1,6 +1,5 @@
 import { navigate } from "gatsby";
 import React, { useState, useRef } from "react";
-import { Container, Row, Button, Col } from "react-bootstrap";
 
 export default function ContactForm() {
 	const [contactState, setContactState] = useState({
@@ -51,7 +50,7 @@ export default function ContactForm() {
 	};
 
 	return (
-		<Container fluid>
+		<div>
 			<h2>Contact Us:</h2>
 			<form
 				name="Contact"
@@ -65,51 +64,50 @@ export default function ContactForm() {
 			>
 				<input type="hidden" name="bot-field" onChange={handleChange} />
 				<input type="hidden" name="form-name" value="Contact" />
-				<Row>
-					<Col xs={12} md={6}>
-						<label htmlFor="name">Name</label>
-						<input
-							name="name"
-							onChange={handleChange}
-							value={contactState.name}
-							type="text"
-							placeholder="John Smith"
-						/>
-					</Col>
-					<Col xs={12} md={6}>
-						<label htmlFor="email">Email</label>
-						<input
-							name="email"
-							onChange={handleChange}
-							value={contactState.email}
-							type="email"
-							placeholder="name@example.com"
-						/>
-					</Col>
-				</Row>
-				<Row>
-					<Col xs={12} md={6}>
-						<label htmlFor="phone">Phone</label>
-						<input
-							name="phone"
-							onChange={handleChange}
-							value={contactState.phone}
-							type="text"
-							placeholder="(123) 456-7890"
-						/>
-					</Col>
-					<Col xs={12} md={6}>
-						<label htmlFor="subject">Subject</label>
-						<input
-							name="subject"
-							onChange={handleChange}
-							value={contactState.subject}
-							type="text"
-							placeholder="Estimate, service appointment, emergency, etc.."
-						/>
-					</Col>
-				</Row>
-				<Col>
+
+				<div xs={12} md={6}>
+					<label htmlFor="name">Name</label>
+					<input
+						name="name"
+						onChange={handleChange}
+						value={contactState.name}
+						type="text"
+						placeholder="John Smith"
+					/>
+				</div>
+				<div xs={12} md={6}>
+					<label htmlFor="email">Email</label>
+					<input
+						name="email"
+						onChange={handleChange}
+						value={contactState.email}
+						type="email"
+						placeholder="name@example.com"
+					/>
+				</div>
+
+				<div xs={12} md={6}>
+					<label htmlFor="phone">Phone</label>
+					<input
+						name="phone"
+						onChange={handleChange}
+						value={contactState.phone}
+						type="text"
+						placeholder="(123) 456-7890"
+					/>
+				</div>
+				<div xs={12} md={6}>
+					<label htmlFor="subject">Subject</label>
+					<input
+						name="subject"
+						onChange={handleChange}
+						value={contactState.subject}
+						type="text"
+						placeholder="Estimate, service appointment, emergency, etc.."
+					/>
+				</div>
+
+				<div>
 					<label htmlFor="message">Message</label>
 					<textarea
 						name="message"
@@ -118,11 +116,11 @@ export default function ContactForm() {
 						rows="3"
 						placeholder="Please include as much detail as possible."
 					/>
-				</Col>
-				<Button variant="primary" type="submit">
+				</div>
+				<button variant="primary" type="submit">
 					Submit
-				</Button>
+				</button>
 			</form>
-		</Container>
+		</div>
 	);
 }

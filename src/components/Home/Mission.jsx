@@ -1,7 +1,5 @@
 import { Link } from "gatsby";
 import React from "react";
-import { Container, Row, Col, Jumbotron, Button, Fade } from "react-bootstrap";
-// import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 const INFO = [
 	{
@@ -18,32 +16,27 @@ const INFO = [
 
 const renderInfo = () => {
 	return INFO.map((item, index) => (
-		<Col xs={12} md={6} key={index}>
+		<div key={index}>
 			<h3>{item.title}</h3>
 			<p>{item.desc}</p>
-		</Col>
+		</div>
 	));
 };
 
 export default function Mission() {
 	return (
-		<Fade appear in>
-			<Jumbotron>
-				<Container>
-					<Row>
-						<Col>
-							<h2 className="mb-4">
-								Our professional services are recommended by all of our great
-								customers!
-							</h2>
-						</Col>
-					</Row>
-					<Row>{renderInfo()}</Row>
-					<Button variant="primary" as={Link} to="/contact">
-						REQUEST A SERVICE
-					</Button>
-				</Container>
-			</Jumbotron>
-		</Fade>
+		<div>
+			<div>
+				<h2 className="mb-4">
+					Our professional services are recommended by all of our great
+					customers!
+				</h2>
+			</div>
+
+			<div>{renderInfo()}</div>
+			<button variant="primary" as={Link} to="/contact">
+				REQUEST A SERVICE
+			</button>
+		</div>
 	);
 }

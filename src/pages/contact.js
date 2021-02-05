@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../utils/Layout";
+import Layout from "../components/shared/Layout";
 import Hours from "../components/Contact/Hours";
 import ContactForm from "../components/Contact/Form";
 

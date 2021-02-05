@@ -23,7 +23,7 @@ export const Header = () => {
 	};
 
 	return (
-		<header className="fixed top-0 z-50 w-full text-white bg-indigo-900">
+		<header className="fixed top-0 z-50 w-full px-6 text-blue-900 bg-yellow-300">
 			<div className="flex flex-wrap items-center justify-between p-3 mx-auto">
 				<Link to="/">
 					<img src={logo} className="object-contain" />

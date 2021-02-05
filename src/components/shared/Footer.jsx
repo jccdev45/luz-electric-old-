@@ -1,10 +1,10 @@
 import React from "react";
 
 export default function Footer() {
-  return (
-    <footer className="col aic jcc p-4">
-      <span>&copy; {new Date().getFullYear()}</span>
-      <span className="my-2">Luz Electric and Control Systems Inc</span>
-    </footer>
-  );
+	return (
+		<footer className="z-10 flex flex-col items-center justify-center p-2">
+			<span>&copy; {new Date().getFullYear()}</span>
+			<span className="my-2">Luz Electric and Control Systems Inc</span>
+		</footer>
+	);
 }

@@ -1,9 +1,3 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
 module.exports = {
 	siteMetadata: {
 		title: `Luz Electric and Control Systems Inc.`,
@@ -12,6 +6,8 @@ module.exports = {
 	},
 	plugins: [
 		`gatsby-transformer-sharp`,
+		`gatsby-plugin-postcss`,
+		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-sharp`,
 		`gatsby-plugin-sass`,
 		{
@@ -25,17 +21,6 @@ module.exports = {
 			options: {
 				name: `assets`,
 				path: `${__dirname}/src/assets`,
-			},
-		},
-		`gatsby-plugin-styled-components`,
-		{
-			resolve: `gatsby-plugin-manifest`,
-			options: {
-				name: `Luz Electric and Control Systems Inc.`,
-				short_name: `Luz Electric`,
-				start_url: `/`,
-				display: `standalone`,
-				icon: `src/assets/img/luz-icon.png`,
 			},
 		},
 	],

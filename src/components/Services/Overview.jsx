@@ -1,5 +1,4 @@
 import React from "react";
-import Img from "gatsby-image";
 import Commercial from "../../assets/img/overview/commercial.png";
 import Construction from "../../assets/img/overview/construction.png";
 import Inspect from "../../assets/img/overview/inspect.png";
@@ -64,18 +63,21 @@ export default function Overview() {
 	];
 
 	const renderServices = () => {
-		return SERVICES.map((service, index) => (
-			// service
-			<div className="w-full h-full" key={index}>
-				<Img fluid={service.image} />
-				<h4 className="my-2">{service.name}</h4>
-				<ul>
-					{service.desc.map((item, index) => (
-						<li key={index}>{item}</li>
-					))}
-				</ul>
-			</div>
-		));
+		return SERVICES.map((service, index) => {
+			console.log(service);
+			return (
+				// service
+				<div className="w-full h-full" key={index}>
+					<img src={service.image} className="w-16 h-16" />
+					<h4 className="my-2">{service.name}</h4>
+					<ul>
+						{service.desc.map((item, index) => (
+							<li key={index}>{item}</li>
+						))}
+					</ul>
+				</div>
+			);
+		});
 	};
 
 	return (

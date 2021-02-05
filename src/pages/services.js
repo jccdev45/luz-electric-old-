@@ -11,21 +11,21 @@ export default () => {
 		query {
 			banner: file(relativePath: { eq: "img/services/banner.jpg" }) {
 				childImageSharp {
-					fluid {
+					fluid(quality: 90, maxWidth: 1600) {
 						...GatsbyImageSharpFluid
 					}
 				}
 			}
-			overview: allFile(filter: { relativeDirectory: { eq: "img/overview" } }) {
-				nodes {
-					childImageSharp {
-						fixed(width: 62, height: 62) {
-							...GatsbyImageSharpFixed
-							originalName
-						}
-					}
-				}
-			}
+			# overview: allFile(filter: { relativeDirectory: { eq: "img/overview" } }) {
+			# 	nodes {
+			# 		childImageSharp {
+			# 			fixed(width: 62, height: 62) {
+			# 				...GatsbyImageSharpFixed
+			# 				originalName
+			# 			}
+			# 		}
+			# 	}
+			# }
 		}
 	`);
 
@@ -33,7 +33,7 @@ export default () => {
 		<Layout>
 			<Hero img={query.banner.childImageSharp.fluid} />
 			<Intro />
-			<Overview img={query.overview.nodes} />
+			<Overview />
 			<Safety />
 		</Layout>
 	);

@@ -7,11 +7,11 @@ import ContactForm from "../components/Contact/Form";
 export default () => {
 	return (
 		<Layout>
-			<Container className="py-3 row aic" fluid style={{ minHeight: `75vh` }}>
-				<Col xs={12} md={6}>
+			<Container className="p-5 row aic" fluid style={{ minHeight: `100%` }}>
+				<Col md={12}>
 					<Hours />
 				</Col>
-				<Col xs={12} md={6}>
+				<Col md={12}>
 					<ContactForm />
 				</Col>
 			</Container>

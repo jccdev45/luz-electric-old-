@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Table } from "react-bootstrap";
 
 export default function Hours() {
 	return (
@@ -15,10 +15,7 @@ export default function Hours() {
 					</h4>
 				</Col>
 				<Col>
-					<h2>Hours:</h2>
-					<h4>Mon - Fri</h4>
-					<h4>8 - 4 PM</h4>
-					{/* <Table striped bordered responsive>
+					<Table striped bordered responsive>
 						<thead>
 							<tr>
 								<th>Mon</th>
@@ -30,14 +27,14 @@ export default function Hours() {
 						</thead>
 						<tbody>
 							<tr>
-								<td>9AM - 5PM</td>
-								<td>9AM - 5PM</td>
-								<td>9AM - 5PM</td>
-								<td>9AM - 5PM</td>
-								<td>9AM - 5PM</td>
+								<td>8AM - 4PM</td>
+								<td>8AM - 4PM</td>
+								<td>8AM - 4PM</td>
+								<td>8AM - 4PM</td>
+								<td>8AM - 4PM</td>
 							</tr>
 						</tbody>
-					</Table> */}
+					</Table>
 				</Col>
 			</Row>
 		</Container>

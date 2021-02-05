@@ -12,14 +12,14 @@ export default () => {
 		query {
 			banner: file(relativePath: { eq: "img/banner.jpg" }) {
 				childImageSharp {
-					fluid {
+					fluid(quality: 90, maxWidth: 1600) {
 						...GatsbyImageSharpFluid
 					}
 				}
 			}
 			mbe: file(relativePath: { eq: "img/MBE.png" }) {
 				childImageSharp {
-					fluid {
+					fluid(quality: 90, maxWidth: 1600) {
 						...GatsbyImageSharpFluid
 					}
 				}

@@ -23,12 +23,15 @@ export const Header = () => {
 	};
 
 	return (
-		<header className="fixed top-0 z-50 w-full px-6 text-blue-900 bg-yellow-300">
+		<header className="fixed top-0 z-50 w-full px-6 text-primary bg-secondary">
 			<div className="flex flex-wrap items-center justify-between p-3 mx-auto">
 				<Link to="/">
 					<img src={logo} className="object-contain" />
 				</Link>
-				<nav className="w-full md:flex md:items-center md:w-auto">
+				<nav
+					className="w-full md:flex md:items-center md:w-auto"
+					style={{ fontFamily: `fira sans condensed` }}
+				>
 					{renderRoutes()}
 				</nav>
 			</div>

@@ -13,7 +13,7 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-google-fonts`,
 			options: {
-				fonts: [`Fira Sans Condensed`, `Roboto`],
+				fonts: [`fira sans condensed`, `roboto`],
 			},
 		},
 		{

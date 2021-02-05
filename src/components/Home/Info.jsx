@@ -27,11 +27,14 @@ const INFO = [
 
 const renderInfo = () => {
 	return INFO.map((item, index) => (
-		<div className="bg-dark text-white" key={index}>
+		<div
+			className="flex flex-col items-center justify-between w-full h-full px-6 py-10 mx-4 text-white bg-gray-600 rounded"
+			key={index}
+		>
 			<img src={item.image} />
-			<div>
-				<h3>{item.title}</h3>
-				<p>{item.desc}</p>
+			<div className="flex flex-col items-center justify-start h-full">
+				<h3 className="text-xl font-bold text-center">{item.title}</h3>
+				<p className="text-justify">{item.desc}</p>
 			</div>
 		</div>
 	));
@@ -40,6 +43,8 @@ const renderInfo = () => {
 export default function Info() {
 	return (
 		// footskis
-		<div className="">{renderInfo()}</div>
+		<div className="flex items-center justify-center w-full p-4 bg-primary">
+			{renderInfo()}
+		</div>
 	);
 }

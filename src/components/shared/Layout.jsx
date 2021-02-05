@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 const Layout = ({ children }) => {
 	return (
-		<>
+		<div style={{ fontFamily: `roboto` }}>
 			<Header />
 			<main className="flex flex-grow">
 				<section className="flex flex-col justify-center pt-16 ml-auto">
@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
 				</section>
 			</main>
 			<Footer />
-		</>
+		</div>
 	);
 };
 

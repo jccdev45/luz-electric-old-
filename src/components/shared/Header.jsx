@@ -28,8 +28,12 @@ export const Header = () => {
 	return (
 		<header className="fixed top-0 z-50 w-full px-6 text-primary bg-secondary">
 			<div className="flex flex-wrap items-center justify-between p-3 mx-auto">
-				<Link to="/" onClick={() => toggleExpansion(!isExpanded)}>
-					<img src={logo} className="object-contain focus:outline-none" />
+				<Link to="/" onClick={() => toggleExpansion(false)}>
+					<img
+						src={logo}
+						alt="Luz Electric logo"
+						className="object-contain focus:outline-none"
+					/>
 				</Link>
 				<button
 					className="flex items-center px-3 py-2 border border-white rounded focus:outline-none md:hidden"

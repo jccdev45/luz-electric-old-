@@ -72,7 +72,7 @@ export default function Overview() {
 					className="flex flex-col items-center justify-start w-full px-4 my-4 md:pb-20 md:w-1/3"
 					key={index}
 				>
-					<img src={service.image} className="w-14 h-14" />
+					<img src={service.image} alt={service.name} className="w-14 h-14" />
 					<h4 className="my-2 text-xl text-center border-b border-yellow-500">
 						<Pulse>{service.name}</Pulse>
 					</h4>

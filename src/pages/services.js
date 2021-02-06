@@ -16,6 +16,13 @@ export default () => {
 					}
 				}
 			}
+			mbe: file(relativePath: { eq: "img/MBE.png" }) {
+				childImageSharp {
+					fluid(maxWidth: 800) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
 			# overview: allFile(filter: { relativeDirectory: { eq: "img/overview" } }) {
 			# 	nodes {
 			# 		childImageSharp {
@@ -31,7 +38,10 @@ export default () => {
 
 	return (
 		<Layout>
-			<Hero img={query.banner.childImageSharp.fluid} />
+			<Hero
+				img={query.banner.childImageSharp.fluid}
+				img2={query.mbe.childImageSharp.fluid}
+			/>
 			<Intro />
 			<Overview />
 			<Safety />

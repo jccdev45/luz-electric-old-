@@ -9,12 +9,13 @@ export default function Estimate(props) {
 		// carousel-container
 		<div className="flex p-4 bg-primary">
 			<div className="w-1/2">
-				<Carousel>
-					{props.img.map((image, index) => (
-						<div key={index} style={{ width: `100%`, height: `100%` }}>
-							<Img fluid={image.childImageSharp.fluid} />
-						</div>
-					))}
+				<Carousel showThumbs={false}>
+					{props &&
+						props.img.map((image, index) => (
+							<div key={index} style={{ width: `100%`, height: `100%` }}>
+								<Img fluid={image.childImageSharp.fluid} />
+							</div>
+						))}
 				</Carousel>
 			</div>
 			<div className="flex flex-col items-center justify-center w-1/2 mx-auto my-4">
@@ -29,14 +30,12 @@ export default function Estimate(props) {
 						{item}
 					</h3>
 				))}
-				<div>
-					<Link
-						className="px-4 py-3 my-4 text-white bg-yellow-400 rounded"
-						to="/contact"
-					>
-						GET AN ESTIMATE
-					</Link>
-				</div>
+				<Link
+					className="px-4 py-3 my-4 text-white bg-yellow-400 rounded shadow-white"
+					to="/contact"
+				>
+					GET AN ESTIMATE
+				</Link>
 			</div>
 		</div>
 	);

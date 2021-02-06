@@ -18,23 +18,23 @@ const renderInfo = () => {
 	return INFO.map((item, index) => (
 		<div
 			key={index}
-			className="flex flex-col items-center justify-center w-2/3 mx-auto my-8 text-justify"
+			className="flex flex-col items-center justify-center w-full mx-auto my-8 text-justify md:w-2/3"
 		>
 			<h3 className="text-3xl bold">{item.title}</h3>
-			<p>{item.desc}</p>
+			<p className="text-lg">{item.desc}</p>
 		</div>
 	));
 };
 
 export default function Mission() {
 	return (
-		<div className="flex flex-col items-center justify-center max-w-screen-xl py-8 mx-auto">
+		<div className="flex flex-col items-center justify-center w-full max-w-screen-xl p-12 mx-auto md:py-8">
 			<h2 className="mb-4 text-3xl font-bold text-center">
 				Our professional services are recommended by all of our great customers!
 			</h2>
 			<div className="flex flex-col justify-center">{renderInfo()}</div>
 			<Link
-				className="px-3 py-2 text-white bg-yellow-400 border border-white rounded"
+				className="px-3 py-2 text-white bg-yellow-400 border border-white rounded shadow-md"
 				to="/contact"
 			>
 				REQUEST A SERVICE

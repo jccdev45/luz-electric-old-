@@ -9,16 +9,23 @@ import Layout from "../components/shared/Layout";
 export default () => {
 	const query = useStaticQuery(graphql`
 		query {
-			banner: file(relativePath: { eq: "img/banner.jpg" }) {
+			mobileImg: file(relativePath: { eq: "img/banner550.jpg" }) {
 				childImageSharp {
-					fluid(quality: 90, maxWidth: 1600) {
+					fluid(quality: 100, maxWidth: 1000) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			desktopImg: file(relativePath: { eq: "img/banner.jpg" }) {
+				childImageSharp {
+					fluid(quality: 100, maxWidth: 2000) {
 						...GatsbyImageSharpFluid
 					}
 				}
 			}
 			mbe: file(relativePath: { eq: "img/MBE.png" }) {
 				childImageSharp {
-					fluid(quality: 90, maxWidth: 1600) {
+					fluid(maxWidth: 800) {
 						...GatsbyImageSharpFluid
 					}
 				}
@@ -35,12 +42,17 @@ export default () => {
 		}
 	`);
 
+	const sources = [
+		query.mobileImg.childImageSharp.fluid,
+		{
+			...query.desktopImg.childImageSharp.fluid,
+			media: `(min-width: 768px)`,
+		},
+	];
+
 	return (
 		<Layout>
-			<Hero
-				img={query.banner.childImageSharp.fluid}
-				img2={query.mbe.childImageSharp.fluid}
-			/>
+			<Hero img={sources} img2={query.mbe.childImageSharp.fluid} />
 			<Mission />
 			<Estimate img={query.carousel.nodes} />
 			<Info />

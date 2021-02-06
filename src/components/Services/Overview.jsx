@@ -68,7 +68,7 @@ export default function Overview() {
 			return (
 				// service
 				<div
-					className="flex flex-col items-center justify-start w-1/3 px-4 my-4"
+					className="flex flex-col items-center justify-start w-full px-4 my-4 md:w-1/3"
 					key={index}
 				>
 					<img src={service.image} className="w-14 h-14" />
@@ -92,7 +92,7 @@ export default function Overview() {
 
 	return (
 		<div className="flex flex-col justify-center p-12">
-			<div className="flex flex-col items-center justify-center">
+			<div className="flex flex-col items-center justify-center text-center">
 				<h3 className="text-2xl">
 					40+ Years Providing Electrical Services to NYC
 				</h3>
@@ -103,7 +103,9 @@ export default function Overview() {
 					industry experience.
 				</p>
 			</div>
-			<div className="flex flex-wrap">{renderServices()}</div>
+			<div className="flex flex-col items-center justify-center md:flex-row md:flex-wrap">
+				{renderServices()}
+			</div>
 		</div>
 	);
 }

@@ -7,8 +7,8 @@ import { Carousel } from "react-responsive-carousel";
 export default function Estimate(props) {
 	return (
 		// carousel-container
-		<div className="flex p-4 bg-primary">
-			<div className="w-1/2">
+		<div className="flex flex-col p-4 md:flex-row bg-primary">
+			<div className="w-full md:w-1/2">
 				<Carousel showThumbs={false}>
 					{props &&
 						props.img.map((image, index) => (
@@ -18,7 +18,7 @@ export default function Estimate(props) {
 						))}
 				</Carousel>
 			</div>
-			<div className="flex flex-col items-center justify-center w-1/2 mx-auto my-4">
+			<div className="flex flex-col items-center justify-center w-full mx-auto my-4 md:w-1/2">
 				{[
 					"🏡 Private Homes",
 					"🏢 Apartment Buildings",

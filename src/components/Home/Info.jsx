@@ -28,7 +28,7 @@ const INFO = [
 const renderInfo = () => {
 	return INFO.map((item, index) => (
 		<div
-			className="flex flex-col items-center justify-between w-full h-full px-6 py-10 mx-4 text-white bg-gray-600 rounded"
+			className="flex flex-col items-center justify-between w-full h-full px-6 py-10 m-4 text-white bg-gray-600 rounded md:mx-4"
 			key={index}
 		>
 			<img src={item.image} />
@@ -43,7 +43,7 @@ const renderInfo = () => {
 export default function Info() {
 	return (
 		// footskis
-		<div className="flex items-center justify-center w-full p-4 bg-primary">
+		<div className="flex flex-col items-center justify-center w-full p-4 md:flex-row bg-primary">
 			{renderInfo()}
 		</div>
 	);

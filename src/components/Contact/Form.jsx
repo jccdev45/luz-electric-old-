@@ -134,7 +134,7 @@ export default function ContactForm() {
 				</div>
 				<button
 					variant="primary"
-					className="px-3 py-2 mx-auto text-white bg-yellow-400 border-white rounded focus:outline-none"
+					className="px-3 py-2 mx-auto text-white bg-yellow-400 border-white rounded shadow-lg focus:outline-none"
 					type="submit"
 				>
 					Submit

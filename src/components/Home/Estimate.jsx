@@ -1,5 +1,6 @@
 import React from "react";
 import Img from "gatsby-image";
+import Fade from "react-reveal/Fade";
 import { Link } from "gatsby";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
@@ -26,9 +27,9 @@ export default function Estimate(props) {
 					"🔌 Installations Wiring",
 					"🛠 Maintenance",
 				].map((item, index) => (
-					<h3 key={index} className="my-4 text-2xl text-white">
-						{item}
-					</h3>
+					<Fade key={index} right>
+						<h3 className="my-4 text-2xl text-white">{item}</h3>
+					</Fade>
 				))}
 				<Link
 					className="px-4 py-3 my-4 text-white bg-yellow-400 rounded shadow-white"

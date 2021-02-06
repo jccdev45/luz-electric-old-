@@ -1,4 +1,5 @@
 import React from "react";
+import Pulse from "react-reveal/Pulse";
 import Commercial from "../../assets/img/overview/commercial.png";
 import Construction from "../../assets/img/overview/construction.png";
 import Inspect from "../../assets/img/overview/inspect.png";
@@ -68,12 +69,12 @@ export default function Overview() {
 			return (
 				// service
 				<div
-					className="flex flex-col items-center justify-start w-full px-4 my-4 md:w-1/3"
+					className="flex flex-col items-center justify-start w-full px-4 my-4 md:pb-20 md:w-1/3"
 					key={index}
 				>
 					<img src={service.image} className="w-14 h-14" />
-					<h4 className="my-2 text-xl border-b border-yellow-500">
-						{service.name}
+					<h4 className="my-2 text-xl text-center border-b border-yellow-500">
+						<Pulse>{service.name}</Pulse>
 					</h4>
 					<ul className="w-full">
 						{service.desc.map((item, index) => (

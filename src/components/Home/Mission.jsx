@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
+import Pulse from "react-reveal/Pulse";
+import HeadShake from "react-reveal/HeadShake";
 
 const INFO = [
 	{
@@ -20,7 +22,9 @@ const renderInfo = () => {
 			key={index}
 			className="flex flex-col items-center justify-center w-full mx-auto my-8 text-justify md:w-2/3"
 		>
-			<h3 className="text-3xl bold">{item.title}</h3>
+			<Pulse>
+				<h3 className="text-3xl bold">{item.title}</h3>
+			</Pulse>
 			<p className="text-lg">{item.desc}</p>
 		</div>
 	));
@@ -37,7 +41,7 @@ export default function Mission() {
 				className="px-3 py-2 text-white bg-yellow-400 border border-white rounded shadow-md"
 				to="/contact"
 			>
-				REQUEST A SERVICE
+				<HeadShake>REQUEST A SERVICE</HeadShake>
 			</Link>
 		</div>
 	);

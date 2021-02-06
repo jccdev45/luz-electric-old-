@@ -1,4 +1,5 @@
 import React from "react";
+import Fade from "react-reveal/Fade";
 
 const INFO = [
 	{
@@ -25,11 +26,13 @@ const renderInfo = () => {
 				index == 1
 					? `border-b-2 border-t-2 border-white  md:border-t-0 md:border-b-0 md:border-l-2 md:border-r-2`
 					: ``
-			} flex flex-col items-center justify-center w-full md:w-1/3 px-4 my-6 mx-2`}
+			} flex flex-col items-center justify-center w-full md:w-1/3 px-4 py-6 mx-2`}
 			key={index}
 		>
 			<h3 className="my-2 text-2xl text-red-800">{item.title}</h3>
-			<p className="text-center">{item.desc}</p>
+			<Fade bottom className="text-center">
+				{item.desc}
+			</Fade>
 		</div>
 	));
 };
@@ -38,7 +41,7 @@ export default function Safety() {
 	return (
 		// services-footer
 		<div className="flex flex-col items-center w-full p-4 text-center text-white bg-primary">
-			<h2 className="my-4 text-3xl">
+			<h2 className="my-8 text-3xl">
 				SAFETY AND QUALITY CONSCIOUS ELECTRICAL CONTRACTORS
 			</h2>
 			<div className="flex flex-col items-center md:flex-row">

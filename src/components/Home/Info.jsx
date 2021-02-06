@@ -1,5 +1,6 @@
 import React from "react";
-// import Img from "gatsby-image";
+import Fade from "react-reveal/Fade";
+import Pulse from "react-reveal/Pulse";
 import Area from "../../assets/img/luz-area2.png";
 import Security from "../../assets/img/luz-security2.png";
 import Team from "../../assets/img/luz-team2.png";
@@ -33,8 +34,12 @@ const renderInfo = () => {
 		>
 			<img src={item.image} />
 			<div className="flex flex-col items-center justify-start h-full">
-				<h3 className="text-xl font-bold text-center">{item.title}</h3>
-				<p className="text-justify">{item.desc}</p>
+				<Pulse>
+					<h3 className="text-xl font-bold text-center">{item.title}</h3>
+				</Pulse>
+				<Fade bottom>
+					<p className="text-justify">{item.desc}</p>
+				</Fade>
 			</div>
 		</div>
 	));

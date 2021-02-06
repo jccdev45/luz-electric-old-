@@ -20,15 +20,9 @@ export default () => {
 
 	return (
 		<Layout>
-			<div className="flex flex-col w-full">
-				<Hero img={query.contactBanner.childImageSharp.fluid} />
-				<div>
-					<Hours />
-				</div>
-				<div>
-					<ContactForm />
-				</div>
-			</div>
+			<Hero img={query.contactBanner.childImageSharp.fluid} />
+			<Hours />
+			<ContactForm />
 		</Layout>
 	);
 };

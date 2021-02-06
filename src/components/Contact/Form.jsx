@@ -50,11 +50,11 @@ export default function ContactForm() {
 	};
 
 	return (
-		<div>
-			<h2>Contact Us:</h2>
+		<div className="flex flex-col items-center justify-center w-full p-4 mx-auto rounded shadow-xl md:w-2/3">
+			<h2 className="text-2xl">Contact Us:</h2>
 			<form
 				name="Contact"
-				className="px-5"
+				className="flex flex-col items-center w-full p-4"
 				method="post"
 				action="/"
 				ref={contactRef}
@@ -65,20 +65,26 @@ export default function ContactForm() {
 				<input type="hidden" name="bot-field" onChange={handleChange} />
 				<input type="hidden" name="form-name" value="Contact" />
 
-				<div xs={12} md={6}>
-					<label htmlFor="name">Name</label>
+				<div className="flex flex-col justify-start w-full my-2">
+					<label className="mr-2" htmlFor="name">
+						Name
+					</label>
 					<input
 						name="name"
+						className="p-2 rounded shadow-inner"
 						onChange={handleChange}
 						value={contactState.name}
 						type="text"
 						placeholder="John Smith"
 					/>
 				</div>
-				<div xs={12} md={6}>
-					<label htmlFor="email">Email</label>
+				<div className="flex flex-col justify-start w-full my-2">
+					<label className="mr-2" htmlFor="email">
+						Email
+					</label>
 					<input
 						name="email"
+						className="p-2 rounded shadow-inner"
 						onChange={handleChange}
 						value={contactState.email}
 						type="email"
@@ -86,20 +92,26 @@ export default function ContactForm() {
 					/>
 				</div>
 
-				<div xs={12} md={6}>
-					<label htmlFor="phone">Phone</label>
+				<div className="flex flex-col justify-start w-full my-2">
+					<label className="mr-2" htmlFor="phone">
+						Phone
+					</label>
 					<input
 						name="phone"
+						className="p-2 rounded shadow-inner"
 						onChange={handleChange}
 						value={contactState.phone}
 						type="text"
 						placeholder="(123) 456-7890"
 					/>
 				</div>
-				<div xs={12} md={6}>
-					<label htmlFor="subject">Subject</label>
+				<div className="flex flex-col justify-start w-full my-2">
+					<label className="mr-2" htmlFor="subject">
+						Subject
+					</label>
 					<input
 						name="subject"
+						className="p-2 rounded shadow-inner"
 						onChange={handleChange}
 						value={contactState.subject}
 						type="text"
@@ -107,17 +119,24 @@ export default function ContactForm() {
 					/>
 				</div>
 
-				<div>
-					<label htmlFor="message">Message</label>
+				<div className="flex flex-col justify-start w-full my-2">
+					<label className="mr-2" htmlFor="message">
+						Message
+					</label>
 					<textarea
 						name="message"
+						className="p-2 rounded shadow-inner"
 						onChange={handleChange}
 						value={contactState.message}
-						rows="3"
+						rows="5"
 						placeholder="Please include as much detail as possible."
 					/>
 				</div>
-				<button variant="primary" type="submit">
+				<button
+					variant="primary"
+					className="px-3 py-2 mx-auto text-white bg-yellow-400 border-white rounded focus:outline-none"
+					type="submit"
+				>
 					Submit
 				</button>
 			</form>

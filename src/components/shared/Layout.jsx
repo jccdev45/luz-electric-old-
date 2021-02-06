@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
 		<div style={{ fontFamily: `roboto` }}>
 			<Header />
 			<main className="flex flex-grow">
-				<section className="flex flex-col justify-center pt-16">
+				<section className="flex flex-col justify-center w-full pt-16">
 					{children}
 				</section>
 			</main>

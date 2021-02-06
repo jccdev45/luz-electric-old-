@@ -20,9 +20,14 @@ const INFO = [
 
 const renderInfo = () => {
 	return INFO.map((item, index) => (
-		<div className="p-4" key={index}>
-			<h3>{item.title}</h3>
-			<p>{item.desc}</p>
+		<div
+			className={`${
+				index == 1 ? `border-l-2 border-r-2 border-white` : ``
+			} flex flex-col items-center justify-center w-1/3 px-4 my-6 mx-2`}
+			key={index}
+		>
+			<h3 className="my-2 text-2xl text-red-800">{item.title}</h3>
+			<p className="text-center">{item.desc}</p>
 		</div>
 	));
 };
@@ -30,13 +35,11 @@ const renderInfo = () => {
 export default function Safety() {
 	return (
 		// services-footer
-		<div className="p-4">
-			<div>
-				<div>
-					<h2>SAFETY AND QUALITY CONSCIOUS ELECTRICAL CONTRACTORS</h2>
-				</div>
-				{renderInfo()}
-			</div>
+		<div className="flex flex-col items-center w-full p-4 text-white bg-primary">
+			<h2 className="my-4 text-3xl">
+				SAFETY AND QUALITY CONSCIOUS ELECTRICAL CONTRACTORS
+			</h2>
+			<div className="flex items-center">{renderInfo()}</div>
 		</div>
 	);
 }

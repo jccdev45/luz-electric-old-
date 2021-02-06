@@ -57,22 +57,32 @@ export default function Overview() {
 			name: "Prevention and Property Protection",
 			image: Prevention,
 			desc: [
-				"Installation of Fire Alarm Systems, Wiring and Related Equipment",
+				"Installation of Fire Alarm Systems",
+				"Wiring and Related Equipment",
 			],
 		},
 	];
 
 	const renderServices = () => {
 		return SERVICES.map((service, index) => {
-			console.log(service);
 			return (
 				// service
-				<div className="w-full h-full" key={index}>
-					<img src={service.image} className="w-16 h-16" />
-					<h4 className="my-2">{service.name}</h4>
-					<ul>
+				<div
+					className="flex flex-col items-center justify-start w-1/3 px-4 my-4"
+					key={index}
+				>
+					<img src={service.image} className="w-14 h-14" />
+					<h4 className="my-2 text-xl border-b border-yellow-500">
+						{service.name}
+					</h4>
+					<ul className="w-full">
 						{service.desc.map((item, index) => (
-							<li key={index}>{item}</li>
+							<li
+								className="my-4 text-center border-b border-gray-200"
+								key={index}
+							>
+								{item}
+							</li>
 						))}
 					</ul>
 				</div>
@@ -81,21 +91,19 @@ export default function Overview() {
 	};
 
 	return (
-		// services-container
-		<div className="">
-			{/* services-row */}
-			<div className="">
-				<div>
-					<h3>40+ Years Providing Electrical Services to NYC</h3>
-					<h2 className="my-4">What We Do:</h2>
-					<p>
-						You can feel confident knowing that our electricians, estimators,
-						and project managers know the tricks of the trade that can only come
-						with industry experience.
-					</p>
-				</div>
-				{renderServices()}
+		<div className="flex flex-col justify-center p-12">
+			<div className="flex flex-col items-center justify-center">
+				<h3 className="text-2xl">
+					40+ Years Providing Electrical Services to NYC
+				</h3>
+				<h2 className="my-4 text-3xl">What We Do:</h2>
+				<p className="my-4">
+					You can feel confident knowing that our electricians, estimators, and
+					project managers know the tricks of the trade that can only come with
+					industry experience.
+				</p>
 			</div>
+			<div className="flex flex-wrap">{renderServices()}</div>
 		</div>
 	);
 }

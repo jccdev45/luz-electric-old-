@@ -32,16 +32,18 @@ const renderInfo = () => {
 
 export default function Mission() {
 	return (
-		<div className="flex flex-col items-center justify-center w-full max-w-screen-xl p-12 mx-auto md:py-8">
+		<div className="flex flex-col items-center justify-center max-w-screen-xl p-6 m-2 border-8 border-yellow-200 shadow-lg lg:p-12 md:w-10/12 md:mx-auto lg:my-12 lg:py-8">
 			<h2 className="mb-4 text-3xl font-bold text-center">
 				Our professional services are recommended by all of our great customers!
 			</h2>
 			<div className="flex flex-col justify-center">{renderInfo()}</div>
 			<Link
-				className="px-3 py-2 text-white bg-yellow-400 border border-white rounded shadow-md"
+				className="px-3 py-2 text-white transition-shadow bg-yellow-300 border border-white rounded shadow-lg hover:shadow-xl"
 				to="/contact"
 			>
-				<HeadShake>REQUEST A SERVICE</HeadShake>
+				<HeadShake>
+					<span className="text-white">REQUEST A SERVICE</span>
+				</HeadShake>
 			</Link>
 		</div>
 	);

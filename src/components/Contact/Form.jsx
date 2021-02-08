@@ -54,7 +54,7 @@ export default function ContactForm() {
 			<h2 className="text-2xl">Contact Us:</h2>
 			<form
 				name="Contact"
-				className="flex flex-col items-center w-full p-4"
+				className="flex flex-col items-center w-10/12 p-4 mx-auto rounded shadow-lg md:shadow-none md:w-full"
 				method="post"
 				action="/"
 				ref={contactRef}

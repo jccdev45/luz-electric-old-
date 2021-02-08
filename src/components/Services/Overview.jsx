@@ -7,69 +7,69 @@ import Prevention from "../../assets/img/overview/prevention.png";
 import Residential from "../../assets/img/overview/residential.png";
 import Service from "../../assets/img/overview/service.png";
 
-export default function Overview() {
-	const SERVICES = [
-		{
-			name: "New Construction",
-			image: Construction,
-			desc: [
-				"Light Fixtures",
-				"Panels, Switches, and Disconnects",
-				"Power Wiring for Light, HVAC and All Related Equipment",
-				"Motor Controls, Starters, Pumps and All Related Equipment",
-			],
-		},
-		{
-			name: "Residential",
-			image: Residential,
-			desc: [
-				"Violation Removals",
-				"Accented Lighting",
-				"Renovations",
-				"Security and Entertainment Systems",
-			],
-		},
-		{
-			name: "Commercial and Industrial",
-			image: Commercial,
-			desc: [
-				"ECB Violation Removals and Certificates of Occupancy",
-				"Control and Service Upgrades",
-				"Parking and Outdoor Lighting",
-				"Automated Building Maintenance Controls and HVAC Systems",
-			],
-		},
-		{
-			name: "Service and Maintenance",
-			image: Service,
-			desc: [
-				"Preventive Maintenance",
-				"Installation of Electrical Power for Appliances",
-			],
-		},
-		{
-			name: "Property Inspection",
-			image: Inspect,
-			desc: [
-				"Identify Violations, Repair and Upgrades Required in Properties for Sale or Rent",
-			],
-		},
-		{
-			name: "Prevention and Property Protection",
-			image: Prevention,
-			desc: [
-				"Installation of Fire Alarm Systems",
-				"Wiring and Related Equipment",
-			],
-		},
-	];
+const SERVICES = [
+	{
+		name: "New Construction",
+		image: Construction,
+		desc: [
+			"Light Fixtures",
+			"Panels, Switches, and Disconnects",
+			"Power Wiring for Light, HVAC and All Related Equipment",
+			"Motor Controls, Starters, Pumps and All Related Equipment",
+		],
+	},
+	{
+		name: "Residential",
+		image: Residential,
+		desc: [
+			"Violation Removals",
+			"Accented Lighting",
+			"Renovations",
+			"Security and Entertainment Systems",
+		],
+	},
+	{
+		name: "Commercial and Industrial",
+		image: Commercial,
+		desc: [
+			"ECB Violation Removals and Certificates of Occupancy",
+			"Control and Service Upgrades",
+			"Parking and Outdoor Lighting",
+			"Automated Building Maintenance Controls and HVAC Systems",
+		],
+	},
+	{
+		name: "Service and Maintenance",
+		image: Service,
+		desc: [
+			"Preventive Maintenance",
+			"Installation of Electrical Power for Appliances",
+		],
+	},
+	{
+		name: "Property Inspection",
+		image: Inspect,
+		desc: [
+			"Identify Violations, Repair and Upgrades Required in Properties for Sale or Rent",
+		],
+	},
+	{
+		name: "Prevention and Property Protection",
+		image: Prevention,
+		desc: [
+			"Installation of Fire Alarm Systems",
+			"Wiring and Related Equipment",
+		],
+	},
+];
 
+export default function Overview() {
 	const renderServices = () => {
 		return SERVICES.map((service, index) => {
 			return (
 				// service
 				<div
-					className="flex flex-col items-center justify-start w-full px-4 my-4 md:pb-20 md:w-1/3"
+					className="flex flex-col items-center justify-start w-full px-4 mx-auto my-4 md:w-2/3 lg:pb-12 md:px-0"
 					key={index}
 				>
 					<img src={service.image} alt={service.name} className="w-14 h-14" />
@@ -104,7 +104,8 @@ export default function Overview() {
 					industry experience.
 				</p>
 			</div>
-			<div className="flex flex-col items-center justify-center md:flex-row md:flex-wrap">
+			{/* <div className="flex flex-col items-center justify-center md:flex-row md:flex-wrap"> */}
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 				{renderServices()}
 			</div>
 		</div>

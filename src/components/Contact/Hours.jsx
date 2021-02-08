@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Hours() {
 	return (
-		<div className="flex flex-col items-center justify-center p-4 text-center md:p-8 md:justify-evenly md:flex-row">
+		<div className="flex flex-col items-center justify-center p-4 text-center md:p-8 lg:justify-evenly lg:flex-row">
 			<div className="flex flex-col">
 				<h2 className="text-2xl">We are located at:</h2>
 				<h4>

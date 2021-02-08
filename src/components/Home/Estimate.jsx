@@ -8,8 +8,8 @@ import { Carousel } from "react-responsive-carousel";
 export default function Estimate(props) {
 	return (
 		// carousel-container
-		<div className="flex flex-col p-4 md:flex-row bg-primary">
-			<div className="w-full md:w-1/2">
+		<div className="flex flex-col items-center p-4 lg:flex-row bg-primary">
+			<div className="w-11/12 lg:w-1/2">
 				<Carousel showThumbs={false}>
 					{props &&
 						props.img.map((image, index) => (
@@ -32,7 +32,7 @@ export default function Estimate(props) {
 					</Fade>
 				))}
 				<Link
-					className="px-4 py-3 my-4 text-white bg-yellow-400 rounded shadow-white"
+					className="px-4 py-3 my-4 text-white transition-colors bg-yellow-400 rounded shadow-white hover:bg-yellow-300"
 					to="/contact"
 				>
 					GET AN ESTIMATE

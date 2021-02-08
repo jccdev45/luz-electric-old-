@@ -1,6 +1,5 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
-import Pulse from "react-reveal/Pulse";
 import Area from "../../assets/img/luz-area2.png";
 import Security from "../../assets/img/luz-security2.png";
 import Team from "../../assets/img/luz-team2.png";
@@ -29,14 +28,12 @@ const INFO = [
 const renderInfo = () => {
 	return INFO.map((item, index) => (
 		<div
-			className="flex flex-col items-center justify-between w-full h-full px-6 py-10 m-4 text-white bg-gray-600 rounded md:mx-4"
+			className="flex flex-col items-center justify-between w-full h-full px-6 py-10 m-4 text-white bg-gray-600 border border-white rounded shadow-white md:mx-4"
 			key={index}
 		>
 			<img src={item.image} alt={item.title} />
 			<div className="flex flex-col items-center justify-start h-full">
-				<Pulse>
-					<h3 className="text-xl font-bold text-center">{item.title}</h3>
-				</Pulse>
+				<h3 className="my-4 text-2xl font-bold text-center">{item.title}</h3>
 				<Fade bottom>
 					<p className="text-justify">{item.desc}</p>
 				</Fade>
@@ -48,7 +45,7 @@ const renderInfo = () => {
 export default function Info() {
 	return (
 		// footskis
-		<div className="flex flex-col items-center justify-center w-full p-4 md:flex-row bg-primary">
+		<div className="flex flex-col items-center justify-center w-full p-4 md:px-20 lg:flex-row bg-primary">
 			{renderInfo()}
 		</div>
 	);

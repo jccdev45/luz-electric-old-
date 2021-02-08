@@ -15,6 +15,13 @@ export default () => {
 					}
 				}
 			}
+			mbe: file(relativePath: { eq: "img/MBE.png" }) {
+				childImageSharp {
+					fluid(maxWidth: 800) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
 		}
 	`);
 

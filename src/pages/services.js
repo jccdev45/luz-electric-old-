@@ -23,25 +23,12 @@ export default () => {
 					}
 				}
 			}
-			# overview: allFile(filter: { relativeDirectory: { eq: "img/overview" } }) {
-			# 	nodes {
-			# 		childImageSharp {
-			# 			fixed(width: 62, height: 62) {
-			# 				...GatsbyImageSharpFixed
-			# 				originalName
-			# 			}
-			# 		}
-			# 	}
-			# }
 		}
 	`);
 
 	return (
 		<Layout>
-			<Hero
-				img={query.banner.childImageSharp.fluid}
-				img2={query.mbe.childImageSharp.fluid}
-			/>
+			<Hero img={query.banner.childImageSharp.fluid} />
 			<Intro />
 			<Overview />
 			<Safety />

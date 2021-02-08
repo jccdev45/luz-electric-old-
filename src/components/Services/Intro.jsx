@@ -12,7 +12,7 @@ export default function Intro() {
 						key={index}
 						className={`${
 							index === 1
-								? `border-b-2 border-t-2 border-black md:border-t-0 md:border-b-0 md:border-l-2 md:border-r-2`
+								? `border-b-2 border-t-2 border-yellow-200 md:border-t-0 md:border-b-0 md:border-l-2 md:border-r-2`
 								: ``
 						} text-3xl md:text-xl w-2/3 text-center md:underline py-2`}
 					>

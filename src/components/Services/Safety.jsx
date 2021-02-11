@@ -30,7 +30,9 @@ const renderInfo = () => {
 			className="flex flex-col items-center justify-between w-full px-2 my-2 md:w-5/12"
 			key={index}
 		>
-			<h3 className="my-2 text-2xl text-red-800">{item.title}</h3>
+			<h3 className="px-8 my-2 text-2xl text-red-800 border-b-2 border-white">
+				{item.title}
+			</h3>
 			<Fade bottom className="text-center">
 				{item.desc}
 			</Fade>

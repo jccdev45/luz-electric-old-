@@ -4,7 +4,6 @@ import HeadShake from "react-reveal/HeadShake";
 
 export default function Intro() {
 	return (
-		// services-intro
 		<div className="flex flex-col items-center justify-center py-10 bg-gray-300">
 			<div className="flex flex-col items-center w-full md:my-6 md:flex-row justify-evenly">
 				{["COMMERCIAL", "RESIDENTIAL", "INDUSTRIAL"].map((item, index) => (
@@ -14,7 +13,7 @@ export default function Intro() {
 							index === 1
 								? `border-b-2 border-t-2 border-yellow-200 md:border-t-0 md:border-b-0 md:border-l-2 md:border-r-2`
 								: ``
-						} text-3xl md:text-xl w-2/3 text-center md:underline py-2`}
+						} lg:text-3xl md:text-2xl text-xl w-2/3 text-center py-2`}
 					>
 						{item}
 					</h3>

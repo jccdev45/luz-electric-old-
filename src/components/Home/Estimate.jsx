@@ -13,7 +13,7 @@ export default function Estimate(props) {
 				<Carousel showThumbs={false}>
 					{props &&
 						props.img.map((image, index) => (
-							<div key={index} style={{ width: `100%`, height: `100%` }}>
+							<div key={index} className="w-full h-full">
 								<Img fluid={image.childImageSharp.fluid} />
 							</div>
 						))}

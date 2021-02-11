@@ -11,14 +11,14 @@ export default () => {
 		query {
 			mobileImg: file(relativePath: { eq: "img/banner550.jpg" }) {
 				childImageSharp {
-					fluid(quality: 100, maxWidth: 1000) {
+					fluid(maxWidth: 1000) {
 						...GatsbyImageSharpFluid
 					}
 				}
 			}
 			desktopImg: file(relativePath: { eq: "img/banner.jpg" }) {
 				childImageSharp {
-					fluid(quality: 100, maxWidth: 2000) {
+					fluid(maxWidth: 2000) {
 						...GatsbyImageSharpFluid
 					}
 				}
@@ -33,7 +33,7 @@ export default () => {
 			carousel: allFile(filter: { relativeDirectory: { eq: "img/carousel" } }) {
 				nodes {
 					childImageSharp {
-						fluid(fit: CONTAIN, maxWidth: 250, maxHeight: 250, quality: 100) {
+						fluid(fit: CONTAIN, maxWidth: 250, maxHeight: 250) {
 							...GatsbyImageSharpFluid
 						}
 					}

@@ -4,13 +4,19 @@ export default function Hours() {
 	return (
 		<div className="flex flex-col items-center justify-center p-4 text-center md:p-8 lg:justify-evenly lg:flex-row">
 			<div className="flex flex-col">
-				<h2 className="text-2xl">We are located at:</h2>
-				<h4>
-					2082 Crotona Avenue <br />
-					Bronx, NY 10457 <br />
-					Tel: 718-220-8989 <br />
-					Fax: 718-220-4441
-				</h4>
+				<h2 className="text-2xl md:text-3xl">We are located at:</h2>
+				<div className="w-full md:text-xl">
+					<p>2082 Crotona Avenue</p>
+					<p>Bronx, NY 10457</p>
+					<div className="flex md:flex-col">
+						<p className="mx-2">
+							<span className="font-bold">Tel:</span> 718-220-8989
+						</p>
+						<p className="mx-2">
+							<span className="font-bold">Fax:</span> 718-220-4441
+						</p>
+					</div>
+				</div>
 			</div>
 
 			<table className="my-4 table-auto">

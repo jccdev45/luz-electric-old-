@@ -50,7 +50,7 @@ export default function ContactForm() {
 	};
 
 	return (
-		<div className="flex flex-col items-center justify-center w-full p-4 mx-auto rounded shadow-xl md:w-2/3">
+		<div className="flex flex-col items-center justify-center w-full p-4 mx-auto rounded shadow-xl md:mb-8 md:w-2/3">
 			<h2 className="text-2xl">Contact Us:</h2>
 			<form
 				name="Contact"

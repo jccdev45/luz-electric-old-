@@ -11,7 +11,7 @@ export default () => {
 		query {
 			banner: file(relativePath: { eq: "img/services/banner.jpg" }) {
 				childImageSharp {
-					fluid(quality: 90, maxWidth: 1600) {
+					fluid(maxWidth: 1600) {
 						...GatsbyImageSharpFluid
 					}
 				}

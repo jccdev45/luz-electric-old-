@@ -6,7 +6,7 @@ function Hero(props) {
 	return (
 		<div className="w-full h-auto" style={{ position: `relative` }}>
 			<Img alt="Banner" fluid={props.img} />
-			<div className="absolute bottom-0 left-0 z-10 w-16 h-16 mb-1 ml-1 md:pb-2 md:pl-2 md:w-36 md:h-36">
+			<div className="absolute top-0 right-0 z-10 w-12 h-12 m-4 md:w-24 lg:w-32 md:h-24 lg:h-32">
 				{props.img2 && (
 					<Rotate top left>
 						<Img

@@ -28,7 +28,7 @@ export default function Intro() {
 			</p>
 			<Link
 				to="/contact"
-				className="px-3 py-2 my-8 text-xl text-white bg-yellow-300 border border-white rounded shadow-md"
+				className="px-3 py-2 my-8 text-xl text-gray-600 bg-yellow-300 border border-white rounded shadow-md"
 			>
 				<HeadShake>CONTACT US</HeadShake>
 			</Link>

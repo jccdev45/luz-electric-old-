@@ -23,7 +23,7 @@ export default () => {
 					}
 				}
 			}
-			mbe: file(relativePath: { eq: "img/MBE.png" }) {
+			mbe: file(relativePath: { eq: "img/MBEwhite.png" }) {
 				childImageSharp {
 					fluid(maxWidth: 800) {
 						...GatsbyImageSharpFluid

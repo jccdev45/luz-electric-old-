@@ -28,14 +28,14 @@ export default function Estimate(props) {
 					"🛠 Maintenance",
 				].map((item, index) => (
 					<Fade key={index} right>
-						<h3 className="my-4 text-2xl text-white">{item}</h3>
+						<h3 className="my-4 text-2xl text-white lg:text-3xl">{item}</h3>
 					</Fade>
 				))}
 				<Link
 					className="px-4 py-3 my-4 text-white transition-colors bg-yellow-400 rounded shadow-white hover:bg-yellow-300"
 					to="/contact"
 				>
-					GET AN ESTIMATE
+					CONTACT US
 				</Link>
 			</div>
 		</div>

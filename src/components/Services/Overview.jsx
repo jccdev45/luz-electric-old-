@@ -67,7 +67,6 @@ export default function Overview() {
 	const renderServices = () => {
 		return SERVICES.map((service, index) => {
 			return (
-				// service
 				<div
 					className="flex flex-col items-center justify-start w-full px-4 mx-auto my-4 md:w-2/3 lg:pb-12 md:px-0"
 					key={index}
@@ -92,7 +91,7 @@ export default function Overview() {
 	};
 
 	return (
-		<div className="flex flex-col justify-center p-12">
+		<div className="flex flex-col justify-center p-8 m-2 border-8 border-yellow-200 shadow-lg lg:p-12 md:w-10/12 md:mx-auto lg:my-12">
 			<div className="flex flex-col items-center justify-center text-center">
 				<h3 className="text-2xl">
 					40+ Years Providing Electrical Services to NYC

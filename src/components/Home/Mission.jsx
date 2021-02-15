@@ -45,7 +45,7 @@ export default function Mission() {
 				to="/contact"
 			>
 				<HeadShake>
-					<span className="text-white">REQUEST A SERVICE</span>
+					<span className="text-white">CONTACT US</span>
 				</HeadShake>
 			</Link>
 		</div>

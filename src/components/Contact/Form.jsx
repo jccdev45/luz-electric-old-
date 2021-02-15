@@ -115,7 +115,7 @@ export default function ContactForm() {
 						onChange={handleChange}
 						value={contactState.subject}
 						type="text"
-						placeholder="Estimate, service appointment, emergency, etc.."
+						placeholder="Estimate, service detail, etc.."
 					/>
 				</div>
 

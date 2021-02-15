@@ -33,7 +33,9 @@ const renderInfo = () => {
 		>
 			<img src={item.image} alt={item.title} />
 			<div className="flex flex-col items-center justify-start h-full">
-				<h3 className="my-4 text-2xl font-bold text-center">{item.title}</h3>
+				<h3 className="px-4 pb-2 my-4 text-2xl font-bold text-center border-b-2 border-yellow-300">
+					{item.title}
+				</h3>
 				<Fade bottom>
 					<p className="text-justify">{item.desc}</p>
 				</Fade>

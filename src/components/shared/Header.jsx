@@ -27,7 +27,7 @@ export const Header = () => {
 
 	return (
 		<header className="fixed top-0 z-50 w-full px-6 text-primary bg-secondary">
-			<div className="flex flex-wrap items-center justify-between p-3 mx-auto">
+			<div className="flex flex-wrap items-center justify-between px-0 py-3 mx-auto md:p-3">
 				<Link to="/" onClick={() => toggleExpansion(false)}>
 					<img
 						src={logo}

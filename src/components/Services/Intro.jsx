@@ -4,7 +4,7 @@ import HeadShake from "react-reveal/HeadShake";
 
 export default function Intro() {
 	return (
-		<div className="flex flex-col items-center justify-center py-10 bg-gray-300">
+		<div className="flex flex-col items-center justify-center py-8 bg-gray-300">
 			<div className="flex flex-col items-center w-full md:my-6 md:flex-row justify-evenly">
 				{["COMMERCIAL", "RESIDENTIAL", "INDUSTRIAL"].map((item, index) => (
 					<h3
@@ -28,9 +28,9 @@ export default function Intro() {
 			</p>
 			<Link
 				to="/contact"
-				className="px-3 py-2 my-4 text-xl text-white bg-yellow-300 border border-white rounded shadow-md"
+				className="px-3 py-2 my-8 text-xl text-white bg-yellow-300 border border-white rounded shadow-md"
 			>
-				<HeadShake>REQUEST A SERVICE</HeadShake>
+				<HeadShake>CONTACT US</HeadShake>
 			</Link>
 		</div>
 	);

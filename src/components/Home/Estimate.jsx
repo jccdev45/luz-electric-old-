@@ -19,20 +19,22 @@ export default function Estimate(props) {
 						))}
 				</Carousel>
 			</div>
-			<div className="flex flex-col items-center justify-center w-full mx-auto my-4 md:w-1/2">
-				{[
-					"🏡 Private Homes",
-					"🏢 Apartment Buildings",
-					"👷🏽‍♂️ New Construction",
-					"🔌 Installations Wiring",
-					"🛠 Maintenance",
-				].map((item, index) => (
-					<Fade key={index} right>
-						<h3 className="my-4 text-2xl text-white lg:text-3xl">{item}</h3>
-					</Fade>
-				))}
+			<div className="flex flex-col items-center w-full h-full mx-auto my-4 justify-evenly md:w-1/2">
+				<div className="flex flex-col items-center">
+					{[
+						"🏡 Private Homes",
+						"🏢 Apartment Buildings",
+						"👷🏽‍♂️ New Construction",
+						"🔌 Installations Wiring",
+						"🛠 Maintenance",
+					].map((item, index) => (
+						<Fade key={index} right>
+							<h3 className="my-4 text-2xl text-white lg:text-3xl">{item}</h3>
+						</Fade>
+					))}
+				</div>
 				<Link
-					className="px-4 py-3 my-4 text-white transition-colors bg-yellow-400 rounded shadow-white hover:bg-yellow-300"
+					className="px-4 py-3 my-4 text-black transition-colors bg-yellow-400 rounded lg:text-2xl shadow-white hover:bg-yellow-300"
 					to="/contact"
 				>
 					CONTACT US

@@ -3,7 +3,7 @@ import React from "react";
 export default function Hours() {
 	return (
 		<div className="flex flex-col items-center justify-center p-4 text-center md:p-8 lg:justify-evenly lg:flex-row">
-			<div className="flex flex-col">
+			<div className="flex-col">
 				<h2 className="text-2xl md:text-3xl">We are located at:</h2>
 				<div className="w-full md:text-xl">
 					<p>2082 Crotona Avenue</p>

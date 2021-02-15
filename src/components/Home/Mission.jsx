@@ -22,7 +22,7 @@ const renderInfo = () => {
 	return INFO.map((item, index) => (
 		<div
 			key={index}
-			className="flex flex-col items-center justify-center w-full mx-auto my-6 text-center md:w-2/3"
+			className="flex-col items-center justify-center w-full mx-auto my-6 text-center md:w-2/3"
 		>
 			<h3 className="px-6 text-xl border-b-2 border-yellow-300 md:px-8 lg:px-24 md:text-3xl bold">
 				<Pulse>{item.title}</Pulse>
@@ -39,13 +39,13 @@ export default function Mission() {
 			<h2 className="text-2xl font-bold text-center md:mb-4 md:text-3xl">
 				Our professional services are recommended by all of our great customers!
 			</h2>
-			<div className="flex flex-col justify-center">{renderInfo()}</div>
+			<div className="flex-col justify-center">{renderInfo()}</div>
 			<Link
-				className="px-3 py-2 text-white transition-shadow bg-yellow-300 border border-white rounded shadow-lg hover:shadow-xl"
+				className="px-3 py-2 text-white transition-shadow bg-yellow-300 border border-white rounded shadow-lg lg:text-xl hover:shadow-xl"
 				to="/contact"
 			>
 				<HeadShake>
-					<span className="text-white">CONTACT US</span>
+					<span className="text-gray-600">CONTACT US</span>
 				</HeadShake>
 			</Link>
 		</div>

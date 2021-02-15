@@ -22,11 +22,6 @@ const INFO = [
 const renderInfo = () => {
 	return INFO.map((item, index) => (
 		<div
-			// className={`${
-			// 	index === 1
-			// 		? `border-b-2 border-t-2 border-white  md:border-t-0 md:border-b-0 md:border-l-2 md:border-r-2`
-			// 		: ``
-			// } flex flex-col items-center justify-between w-full md:w-1/3 px-4 py-6 mx-2`}
 			className="flex flex-col items-center justify-between w-full px-2 my-2 md:w-5/12"
 			key={index}
 		>

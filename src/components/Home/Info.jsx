@@ -28,11 +28,11 @@ const INFO = [
 const renderInfo = () => {
 	return INFO.map((item, index) => (
 		<div
-			className="flex flex-col items-center justify-between w-full h-full px-6 py-10 m-4 text-white bg-gray-600 border border-white rounded shadow-white md:mx-4"
+			className="flex-col items-center justify-between w-full h-full px-6 py-10 m-4 text-white bg-gray-600 border border-white rounded shadow-white md:mx-4"
 			key={index}
 		>
 			<img src={item.image} alt={item.title} />
-			<div className="flex flex-col items-center justify-start h-full">
+			<div className="flex-col items-center justify-start h-full">
 				<h3 className="px-4 pb-2 my-4 text-2xl font-bold text-center border-b-2 border-yellow-300">
 					{item.title}
 				</h3>

@@ -1,10 +1,11 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import SEO from "../components/shared/SEO";
+import Layout from "../components/shared/Layout";
 import Hero from "../components/shared/Hero";
 import Mission from "../components/Home/Mission";
 import Estimate from "../components/Home/Estimate";
 import Info from "../components/Home/Info";
-import Layout from "../components/shared/Layout";
 
 export default () => {
 	const query = useStaticQuery(graphql`
@@ -52,6 +53,7 @@ export default () => {
 
 	return (
 		<Layout>
+			<SEO title="Home" />
 			<Hero img={sources} img2={query.mbe.childImageSharp.fluid} />
 			<Mission />
 			<Estimate img={query.carousel.nodes} />

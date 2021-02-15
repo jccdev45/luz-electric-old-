@@ -8,7 +8,7 @@ function Hero(props) {
 			<Img alt="Banner" fluid={props.img} />
 			<div className="absolute top-0 right-0 z-10 w-12 h-12 m-4 md:w-24 lg:w-32 md:h-24 lg:h-32">
 				{props.img2 && (
-					<Rotate top left>
+					<Rotate top right>
 						<Img
 							alt="MBE (Minority Business Enterprise) Certified"
 							fluid={props.img2}

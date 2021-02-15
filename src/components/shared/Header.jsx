@@ -9,7 +9,7 @@ const ROUTES = [
 	{ id: 4, name: "CONTACT", path: "/contact" },
 ];
 
-export const Header = () => {
+export default function Header() {
 	const [isExpanded, toggleExpansion] = useState(false);
 
 	const renderRoutes = () => {
@@ -59,4 +59,4 @@ export const Header = () => {
 			</div>
 		</header>
 	);
-};
+}

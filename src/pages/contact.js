@@ -4,6 +4,7 @@ import Layout from "../components/shared/Layout";
 import Hours from "../components/Contact/Hours";
 import ContactForm from "../components/Contact/Form";
 import Hero from "../components/shared/Hero";
+import SEO from "../components/shared/SEO";
 
 export default () => {
 	const query = useStaticQuery(graphql`
@@ -27,6 +28,7 @@ export default () => {
 
 	return (
 		<Layout>
+			<SEO title="Contact" />
 			<Hero img={query.contactBanner.childImageSharp.fluid} />
 			<Hours />
 			<ContactForm />

@@ -4,22 +4,28 @@ import Hero from "../components/shared/Hero";
 import Mission from "../components/Home/Mission";
 import Estimate from "../components/Home/Estimate";
 import Info from "../components/Home/Info";
-import Layout from "../utils/Layout";
-import "../styles/custom.scss";
+import Layout from "../components/shared/Layout";
 
 export default () => {
 	const query = useStaticQuery(graphql`
 		query {
-			banner: file(relativePath: { eq: "img/banner.jpg" }) {
+			mobileImg: file(relativePath: { eq: "img/banner550.jpg" }) {
 				childImageSharp {
-					fluid(quality: 90, maxWidth: 1600) {
+					fluid(maxWidth: 1000) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			desktopImg: file(relativePath: { eq: "img/banner.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 2000) {
 						...GatsbyImageSharpFluid
 					}
 				}
 			}
 			mbe: file(relativePath: { eq: "img/MBE.png" }) {
 				childImageSharp {
-					fluid(quality: 90, maxWidth: 1600) {
+					fluid(maxWidth: 800) {
 						...GatsbyImageSharpFluid
 					}
 				}
@@ -27,7 +33,7 @@ export default () => {
 			carousel: allFile(filter: { relativeDirectory: { eq: "img/carousel" } }) {
 				nodes {
 					childImageSharp {
-						fluid(fit: CONTAIN, maxWidth: 250, maxHeight: 250, quality: 100) {
+						fluid(fit: CONTAIN, maxWidth: 250, maxHeight: 250) {
 							...GatsbyImageSharpFluid
 						}
 					}
@@ -36,12 +42,17 @@ export default () => {
 		}
 	`);
 
+	const sources = [
+		query.mobileImg.childImageSharp.fluid,
+		{
+			...query.desktopImg.childImageSharp.fluid,
+			media: `(min-width: 768px)`,
+		},
+	];
+
 	return (
 		<Layout>
-			<Hero
-				img={query.banner.childImageSharp.fluid}
-				img2={query.mbe.childImageSharp.fluid}
-			/>
+			<Hero img={sources} img2={query.mbe.childImageSharp.fluid} />
 			<Mission />
 			<Estimate img={query.carousel.nodes} />
 			<Info />

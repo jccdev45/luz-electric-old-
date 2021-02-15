@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import Fade from "react-reveal/Fade";
 
 const INFO = [
 	{
@@ -21,22 +21,30 @@ const INFO = [
 
 const renderInfo = () => {
 	return INFO.map((item, index) => (
-		<Col className="p-4" xs={12} md={4} key={index}>
-			<h3>{item.title}</h3>
-			<p>{item.desc}</p>
-		</Col>
+		<div
+			className="flex flex-col items-center justify-between w-full px-2 my-2 md:w-5/12"
+			key={index}
+		>
+			<h3 className="px-8 my-2 text-2xl text-red-800 border-b-2 border-white">
+				{item.title}
+			</h3>
+			<Fade bottom className="text-center">
+				{item.desc}
+			</Fade>
+		</div>
 	));
 };
 
 export default function Safety() {
 	return (
-		<Container className="services-footer p-4" fluid>
-			<Row>
-				<Col xs={12}>
-					<h2>SAFETY AND QUALITY CONSCIOUS ELECTRICAL CONTRACTORS</h2>
-				</Col>
+		// services-footer
+		<div className="flex flex-col items-center w-full p-4 text-center text-white bg-primary">
+			<h2 className="my-8 text-3xl">
+				SAFETY AND QUALITY CONSCIOUS ELECTRICAL CONTRACTORS
+			</h2>
+			<div className="flex flex-col items-center justify-evenly md:flex-wrap md:flex-row">
 				{renderInfo()}
-			</Row>
-		</Container>
+			</div>
+		</div>
 	);
 }

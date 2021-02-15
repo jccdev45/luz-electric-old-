@@ -1,22 +1,22 @@
 import React from "react";
 import Img from "gatsby-image";
-import styled from "styled-components";
-
-const HeroContainer = styled.div`
-	width: 100%;
-	height: auto;
-`;
+import Rotate from "react-reveal/Rotate";
 
 function Hero(props) {
 	return (
-		<HeroContainer className="hero-container" style={{ position: `relative` }}>
-			<Img fluid={props.img} />
-			{props.img2 && (
-				<div className="mbe-container">
-					<Img fluid={props.img2} />
-				</div>
-			)}
-		</HeroContainer>
+		<div className="w-full h-auto" style={{ position: `relative` }}>
+			<Img alt="Banner" fluid={props.img} />
+			<div className="absolute bottom-0 left-0 z-10 w-16 h-16 mb-1 ml-1 md:pb-2 md:pl-2 md:w-36 md:h-36">
+				{props.img2 && (
+					<Rotate top left>
+						<Img
+							alt="MBE (Minority Business Enterprise) Certified"
+							fluid={props.img2}
+						/>
+					</Rotate>
+				)}
+			</div>
+		</div>
 	);
 }
 

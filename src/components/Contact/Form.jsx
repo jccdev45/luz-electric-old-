@@ -1,6 +1,5 @@
 import { navigate } from "gatsby";
 import React, { useState, useRef } from "react";
-import { Container, Row, Button, Col } from "react-bootstrap";
 
 export default function ContactForm() {
 	const [contactState, setContactState] = useState({
@@ -15,7 +14,7 @@ export default function ContactForm() {
 	const encode = (data) => {
 		return Object.keys(data)
 			.map(
-				(key) => encodeURIComponent(key) + "+" + encodeURIComponent(data[key])
+				(key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
 			)
 			.join("&");
 	};
@@ -51,11 +50,11 @@ export default function ContactForm() {
 	};
 
 	return (
-		<Container fluid>
-			<h2>Contact Us:</h2>
+		<div className="flex flex-col items-center justify-center w-full p-4 mx-auto rounded shadow-xl md:mb-8 md:w-2/3">
+			<h2 className="text-2xl">Contact Us:</h2>
 			<form
 				name="Contact"
-				className="px-5"
+				className="flex flex-col items-center w-10/12 p-4 mx-auto rounded shadow-lg md:shadow-none md:w-full"
 				method="post"
 				action="/"
 				ref={contactRef}
@@ -65,64 +64,82 @@ export default function ContactForm() {
 			>
 				<input type="hidden" name="bot-field" onChange={handleChange} />
 				<input type="hidden" name="form-name" value="Contact" />
-				<Row>
-					<Col xs={12} md={6}>
-						<label htmlFor="name">Name</label>
-						<input
-							name="name"
-							onChange={handleChange}
-							value={contactState.name}
-							type="text"
-							placeholder="John Smith"
-						/>
-					</Col>
-					<Col xs={12} md={6}>
-						<label htmlFor="email">Email</label>
-						<input
-							name="email"
-							onChange={handleChange}
-							value={contactState.email}
-							type="email"
-							placeholder="name@example.com"
-						/>
-					</Col>
-				</Row>
-				<Row>
-					<Col xs={12} md={6}>
-						<label htmlFor="phone">Phone</label>
-						<input
-							name="phone"
-							onChange={handleChange}
-							value={contactState.phone}
-							type="text"
-							placeholder="(123) 456-7890"
-						/>
-					</Col>
-					<Col xs={12} md={6}>
-						<label htmlFor="subject">Subject</label>
-						<input
-							name="subject"
-							onChange={handleChange}
-							value={contactState.subject}
-							type="text"
-							placeholder="Estimate, service appointment, emergency, etc.."
-						/>
-					</Col>
-				</Row>
-				<Col>
-					<label htmlFor="message">Message</label>
+
+				<div className="flex flex-col justify-start w-full my-2">
+					<label className="mr-2" htmlFor="name">
+						Name
+					</label>
+					<input
+						name="name"
+						className="p-2 rounded shadow-inner"
+						onChange={handleChange}
+						value={contactState.name}
+						type="text"
+						placeholder="John Smith"
+					/>
+				</div>
+				<div className="flex flex-col justify-start w-full my-2">
+					<label className="mr-2" htmlFor="email">
+						Email
+					</label>
+					<input
+						name="email"
+						className="p-2 rounded shadow-inner"
+						onChange={handleChange}
+						value={contactState.email}
+						type="email"
+						placeholder="name@example.com"
+					/>
+				</div>
+
+				<div className="flex flex-col justify-start w-full my-2">
+					<label className="mr-2" htmlFor="phone">
+						Phone
+					</label>
+					<input
+						name="phone"
+						className="p-2 rounded shadow-inner"
+						onChange={handleChange}
+						value={contactState.phone}
+						type="text"
+						placeholder="(123) 456-7890"
+					/>
+				</div>
+				<div className="flex flex-col justify-start w-full my-2">
+					<label className="mr-2" htmlFor="subject">
+						Subject
+					</label>
+					<input
+						name="subject"
+						className="p-2 rounded shadow-inner"
+						onChange={handleChange}
+						value={contactState.subject}
+						type="text"
+						placeholder="Estimate, service detail, etc.."
+					/>
+				</div>
+
+				<div className="flex flex-col justify-start w-full my-2">
+					<label className="mr-2" htmlFor="message">
+						Message
+					</label>
 					<textarea
 						name="message"
+						className="p-2 rounded shadow-inner"
 						onChange={handleChange}
 						value={contactState.message}
-						rows="3"
+						rows="5"
 						placeholder="Please include as much detail as possible."
 					/>
-				</Col>
-				<Button variant="primary" type="submit">
+				</div>
+				<button
+					variant="primary"
+					className="px-3 py-2 mx-auto text-white bg-yellow-400 border-white rounded shadow-lg focus:outline-none"
+					type="submit"
+				>
 					Submit
-				</Button>
+				</button>
 			</form>
-		</Container>
+		</div>
 	);
 }

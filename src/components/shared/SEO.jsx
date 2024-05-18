@@ -62,7 +62,22 @@ function SEO({ description, lang, meta, keywords, title }) {
 								name: `keywords`,
 								content: keywords.join(`, `),
 						  }
-						: []
+						: ["24/7 emergency electrician bronx",
+    "affordable electrician bronx",
+    "all boroughs electrician",
+    "bronx ny electrical contractor",
+    "commercial electrical bronx",
+    "electrical installation bronx",
+    "electrical repair bronx",
+    "electrician near me",
+    "industrial electrical bronx",
+    "licensed electrician bronx",
+    "mbe electrician bronx ny",
+    "minority business enterprise electrician bronx",
+    "nyc electrician",
+    "reliable electrician bronx",
+    "residential electrical bronx",
+    "same day electrician service",]
 				)
 				.concat(meta)}
 			title={title}

@@ -6,8 +6,8 @@ export default function Hours() {
 			<div className="flex-col">
 				<h2 className="text-2xl md:text-3xl">We are located at:</h2>
 				<div className="w-full md:text-xl">
-					<p>2082 Crotona Avenue</p>
-					<p>Bronx, NY 10457</p>
+					<p>2991 Webster Avenue</p>
+					<p>Bronx, NY 10458</p>
 					<div className="flex md:flex-col">
 						<p className="mx-2">
 							<span className="font-bold">Tel:</span> 718-220-8989
